@@ -36,3 +36,113 @@
     transform: rotate(360deg);
   }
 }
+
+
+h1 {
+	font-size: 8rem;
+
+	&strong {
+		font-weight: bold;
+	}
+}
+
+h2 {
+	font-size: 6rem;
+
+	&strong {
+		font-weight: bold;
+	}
+}
+
+h3 {
+	font-size: 4rem;
+
+	&strong {
+		font-weight: bold;
+	}
+}
+
+.button {
+	position: relative;
+	width: max-content;
+	padding: 20px 10px;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -20px;
+		content: '';
+		width: 8px;
+		height: 8px;
+		background: black;
+		transition: .2s cubic-bezier(0.42, 0, 0.83, 0.59);
+		z-index: -1;
+	}
+}
+
+.button:hover {
+	&::before {
+		width: calc(100% + 8px);
+		height: 10px;
+		background: #ECECEC;
+	}
+}
+
+.container {
+	margin: auto;
+	padding: 0 5rem;
+}
+
+@media screen and (min-width: 640px) {
+	.container {
+		max-width: 600px;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		max-width: 700px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.container {
+		max-width: 900px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.container {
+		max-width: 1200px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.container {
+		max-width: 1400px;
+	}
+}
+
+@media screen and (min-width: 1550px) {
+	.container {
+		max-width: 1500px;
+	}
+}
+
+@media screen and (min-width: 1700px) {
+	.container {
+		max-width: 1660px;
+	}
+}
+
+.head-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.head-hidden {
+	opacity: 0;
+	transform: translateY(-10px);
+}
