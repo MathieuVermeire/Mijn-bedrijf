@@ -35,7 +35,7 @@ const Header = () => {
 						<li className={`${visible ? Style.liDeactivate : Style.liActive}`}><NavLink to='/'>Home</NavLink></li>
 						<li className=''><NavLink to='/projecten'>Projecten</NavLink></li>
 						<li className=''><NavLink to='/over-mij'>Over mij</NavLink></li>
-						<li className={`${visible ? Style.liDeactivate : Style.liActive}`}><NavLink to='/contact'>Contact--</NavLink></li>
+						<li className={`${visible ? Style.liDeactivate : Style.liActive}`}><NavLink to='/contact'>Contact</NavLink></li>
 					</ul>
 					<div>
 						<button className={`${Style.contact} ${cls}`}><NavLink to='/contact'>Contact</NavLink></button>
