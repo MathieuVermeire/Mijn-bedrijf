@@ -1,0 +1,61 @@
+.projectWrapper {
+	margin-top: 28rem;
+}
+
+.project {
+	display: flex;
+	margin-top: 15rem;
+}
+
+
+.projectTitle {
+	font-size: 8rem;
+	text-align: center;
+}
+
+.projectColumn {
+	width: 50%;
+}
+
+.projectChild {
+	border-radius: 50px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.projectChild:not(:nth-child(1)) {
+	margin-top: 5rem;
+}
+
+.project .projectColumn:nth-child(1) {
+	margin-right: 2.5rem;
+}
+
+.project .projectColumn:nth-child(2) {
+	margin-left: 2.5rem;
+}
+
+.projectWebsites {
+	padding-bottom: 8rem;
+	position: relative;
+}
+
+.projectsMore {
+	position: absolute;
+	bottom: 1rem;
+	right: 0;
+}
+
+.projectChildWebsite {
+	background-color: #ececec;
+	height: 10rem;
+	border-radius: 20px;
+	padding: 4.3rem;
+	display: flex;
+	align-items: center;
+}
+
+.projectBranding {
+	position: relative;
+	padding-bottom: 8rem;
+}

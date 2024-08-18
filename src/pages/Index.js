@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import ServiceItemsList from '../components/arrays/ServiceItemsList'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ServiceItems from '../components/ServiceItems';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,13 +45,13 @@ const Home = () => {
   const sm = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, -50]);
 	const md = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, -100]);
 	const mdNegative = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, 100]);
-	const lg = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, -300]);
+	const lg = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, -500]);
 	const lgStarter = useTransform(intro.scrollYProgress, [0, 1], [0, -300]);
 	const lgNegative = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, 250]);
 
 	return (
 		<div className={`container`}>
-			<h1 className=''><strong>Base Studio</strong>, jouw persoonlijke branding, stap voor stap</h1>
+			<h1 className='text-center'><strong>Base Studio</strong>, jouw persoonlijke branding, stap voor stap</h1>
 			<img className={Style.down} src={down} alt='' />
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
@@ -71,43 +72,84 @@ const Home = () => {
 					))}
 				</section>
 			</article>
-			<article>
+			<article className={Style.projectWrapper}>
+				<h2 className={Style.projectTitle}> Mijn <strong>Projecten</strong></h2>
 				<div className={Style.project}>
 				<motion.div
 				ref={column1}
 				className={Style.projectColumn}
 				style={{y: lg}}
 				>
-					<motion.div
-					whileHover={'onHover'}
-					variants={hoverVariants}
-					className={Style.projectChild}>
-						<img className='' src={matheyoThumbnail} />
-					</motion.div>
-					<motion.div
-					whileHover={'onHover'}
-					variants={hoverVariants}
-					className={Style.projectChild}>
-						<img className='' src={matheyoThumbnail} />
-					</motion.div>
+					<div className={Style.projectWebsites}>
+						<motion.div
+						whileHover={'onHover'}
+						variants={hoverVariants}
+						className={`${Style.projectChild} ${Style.projectChildWebsite}`}>
+							<div>
+								<img src='' alt=''/>
+								<p>Dirkjan decock</p>
+							</div>
+						</motion.div>
+						<motion.div
+						whileHover={'onHover'}
+						variants={hoverVariants}
+						className={`${Style.projectChild} ${Style.projectChildWebsite}`}>
+							<div>
+								<img src='' alt=''/>
+								<p>Matheyo</p>
+							</div>
+						</motion.div>
+					</div>
+					<div className={Style.projectBranding}>
+						<motion.div
+						whileHover={'onHover'}
+						variants={hoverVariants}
+						className={Style.projectChild}>
+							<img className='' src={matheyoThumbnail} />
+						</motion.div>
+					</div>
 				</motion.div>
 				<motion.div
 				ref={column2}
 				className={Style.projectColumn}
 				style={{y: lg}}
 				>
-					<motion.div
-					whileHover={'onHover'}
-					variants={hoverVariants}
-					className={Style.projectChild}>
-						<img className='' src={duurzaamwonenThumbnail} />
-					</motion.div>
-					<motion.div
+					<div className={Style.projectWebsites}>
+						<motion.div
+						whileHover={'onHover'}
+						variants={hoverVariants}
+						className={`${Style.projectChild} ${Style.projectChildWebsite}`}>
+							<div>
+								<img src='' alt=''/>
+								<p>Atelier Rainier</p>
+							</div>
+						</motion.div>
+						<motion.div
+						whileHover={'onHover'}
+						variants={hoverVariants}
+						className={`${Style.projectChild} ${Style.projectChildWebsite}`}>
+							<div>
+								<img src='' alt=''/>
+								<p>Vanhoorn - maeckelbergh</p>
+							</div>
+						</motion.div>
+						<button className={`button ${Style.projectsMore}`}><Link to='projects'>Meer Programmatie</Link></button>
+					</div>
+					<div className={Style.projectBranding}>
+						<motion.div
 						whileHover={'onHover'}
 						variants={hoverVariants}
 						className={Style.projectChild}>
-						<img className='' src={duurzaamwonenThumbnail} />
-					</motion.div>
+							<img className='' src={duurzaamwonenThumbnail} />
+						</motion.div>
+						<motion.div
+							whileHover={'onHover'}
+							variants={hoverVariants}
+							className={Style.projectChild}>
+							<img className='' src={duurzaamwonenThumbnail} />
+						</motion.div>
+						<button className={`button ${Style.projectsMore}`}><Link to='projects'>Meer Brandings</Link></button>
+					</div>
 				</motion.div>
 				</div>
 			</article>

@@ -88,8 +88,19 @@ article {
 	display: flex;
 }
 
+.projectWrapper {
+	margin-top: 28rem;
+}
+
 .project {
 	display: flex;
+	margin-top: 15rem;
+}
+
+
+.projectTitle {
+	font-size: 8rem;
+	text-align: center;
 }
 
 .projectColumn {
@@ -112,6 +123,31 @@ article {
 
 .project .projectColumn:nth-child(2) {
 	margin-left: 2.5rem;
+}
+
+.projectWebsites {
+	padding-bottom: 8rem;
+	position: relative;
+}
+
+.projectsMore {
+	position: absolute;
+	bottom: 1rem;
+	right: 0;
+}
+
+.projectChildWebsite {
+	background-color: #ececec;
+	height: 10rem;
+	border-radius: 20px;
+	padding: 4.3rem;
+	display: flex;
+	align-items: center;
+}
+
+.projectBranding {
+	position: relative;
+	padding-bottom: 8rem;
 }
 
 .button {

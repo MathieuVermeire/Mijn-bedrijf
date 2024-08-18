@@ -38,21 +38,19 @@
 
 .header ul li {
 	padding: 0 2rem;
-	transition: opacity .2s ease-in-out;
 	transition: padding .5s ease-in-out;
-	transition-delay: opacity .5s;
-
 	width: max-content;
 
 }
 
 .liDeactivate {
-	opacity: 0;
-	width: 0 !important;
-	padding: 0rem !important;
+
 }
 
-.header ul li a {
+.liDeactivate a {
+}
+
+.liActive a {
 }
 
 .contact {
@@ -63,8 +61,8 @@
 	transition: .2s ease-in-out;
 }
 
-.liActive {
+/* .liActive {
 	opacity: 1;
 	width: 100%;
 	padding: 0 2rem;
-}
+} */

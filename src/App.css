@@ -66,6 +66,7 @@ h3 {
 	position: relative;
 	width: max-content;
 	padding: 20px 10px;
+	margin-right: 20px;
 
 	&::before {
 		position: absolute;
@@ -86,6 +87,7 @@ h3 {
 		width: calc(100% + 8px);
 		height: 10px;
 		background: #ECECEC;
+		transition-delay: background .2s;
 	}
 }
 
