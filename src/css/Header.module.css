@@ -20,7 +20,7 @@
 .logo {
 	display: block;
 	width: max-content;
-	transition: .2s ease-in-out;
+	transition: .1s ease-in-out;
 }
 
 .header div {
@@ -34,6 +34,7 @@
 	padding: 3rem 5rem;
 	background-color: #ECECEC;
 	border-radius: 200px;
+	justify-content: center;
 }
 
 .header ul li {
@@ -41,9 +42,7 @@
 	transition: opacity .2s ease-in-out;
 	transition: padding .5s ease-in-out;
 	transition-delay: opacity .5s;
-
 	width: max-content;
-
 }
 
 .liDeactivate {
@@ -53,6 +52,8 @@
 }
 
 .header ul li a {
+	display: block;
+	width: max-content;
 }
 
 .contact {
@@ -60,7 +61,8 @@
 	padding: 1.2rem 6rem;
 	color: white;
 	margin-left: auto;
-	transition: .2s ease-in-out;
+	transition: .1s ease-in-out;
+	border-radius: 100px;
 }
 
 .liActive {
