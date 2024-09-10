@@ -40,6 +40,7 @@
 
 h1 {
 	font-size: 8rem;
+	line-height: normal;
 
 	&strong {
 		font-weight: bold;
@@ -48,6 +49,7 @@ h1 {
 
 h2 {
 	font-size: 6rem;
+	line-height: normal;
 
 	&strong {
 		font-weight: bold;
@@ -56,16 +58,26 @@ h2 {
 
 h3 {
 	font-size: 4rem;
+	line-height: normal;
 
 	&strong {
 		font-weight: bold;
 	}
 }
 
+h4 {
+	line-height: normal;
+}
+
+img {
+	object-fit: cover;
+}
+
 .button {
 	position: relative;
 	width: max-content;
 	padding: 20px 10px;
+	margin-right: 20px;
 
 	&::before {
 		position: absolute;
@@ -86,6 +98,7 @@ h3 {
 		width: calc(100% + 8px);
 		height: 10px;
 		background: #ECECEC;
+		transition-delay: background .2s;
 	}
 }
 

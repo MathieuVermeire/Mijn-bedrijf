@@ -7,7 +7,7 @@ h1 {
 	margin: auto;
 }
 
-article {
+.articleM {
 	margin-top: 18.5rem;
 	display: flex;
 	flex-flow: column;
@@ -52,13 +52,18 @@ article {
 	margin-top: 2rem;
 }
 
+.serviceItemWrapper {
+	
+}
+
 .servicesWrapper {
 	display: flex;
 	flex-flow: column;
+	margin-top: 15rem;
 }
 
 .serviceItem:first-child {
-	margin-top: 15rem;
+	/* margin-top: 15rem; */
 	border-top: 1px solid black;
 }
 
@@ -88,8 +93,19 @@ article {
 	display: flex;
 }
 
+.projectWrapper {
+	margin-top: 28rem;
+}
+
 .project {
 	display: flex;
+	margin-top: 15rem;
+}
+
+
+.projectTitle {
+	font-size: 8rem;
+	text-align: center;
 }
 
 .projectColumn {
@@ -100,6 +116,7 @@ article {
 	border-radius: 50px;
 	overflow: hidden;
 	cursor: pointer;
+	margin-top: 5rem;
 }
 
 .projectChild:not(:nth-child(1)) {
@@ -112,6 +129,31 @@ article {
 
 .project .projectColumn:nth-child(2) {
 	margin-left: 2.5rem;
+}
+
+.projectWebsites {
+	padding-bottom: 8rem;
+	position: relative;
+}
+
+.projectsMore {
+	position: absolute;
+	bottom: 1rem;
+	right: 0;
+}
+
+.projectChildWebsite {
+	background-color: #ececec;
+	height: 10rem;
+	border-radius: 20px;
+	padding: 4.3rem;
+	display: flex;
+	align-items: center;
+}
+
+.projectBranding {
+	position: relative;
+	padding-bottom: 8rem;
 }
 
 .button {

@@ -3,15 +3,12 @@ import { motion, useTransform, useMotionValue, useScroll } from 'framer-motion';
 import { useState } from 'react';
 
 
-const ServiceItems = ({ item, id, onStateChange }) => {
-	const [isOpen, setIsOpen] = useState(false);
-
-
-	const handleServiceItem = e => {
-		setIsOpen(!isOpen);
-		console.log(id);
-		onStateChange(id);
-	};
+const ServiceItems = ({ item, isActiveSection, id, onActiveIndex }) => {
+	const toggleSection = () => {
+		const nextIndex = isActiveSection ? null : id;
+		onActiveIndex(nextIndex);
+		console.log(nextIndex);
+	}
 
 	const TopLevelVariant = {
 		open: { opacity: 1 },
@@ -29,12 +26,12 @@ const ServiceItems = ({ item, id, onStateChange }) => {
 	};
 
 	return (
-		<motion.div animate={isOpen ? "open" : "closed"} variants={ItemVariant} id={id} onClick={e => handleServiceItem(e)} className={Style.serviceItem}>
-			<motion.div animate={!isOpen ? "open" : "closed"} variants={TopLevelVariant} className={`${Style.serviceItemPart1} ${Style.active}`}>
+		<motion.div onClick={toggleSection} animate={isActiveSection ? "open" : "closed"} variants={ItemVariant} id={id} className={Style.serviceItem}>
+			<motion.div animate={isActiveSection ? "closed" : "open"} variants={TopLevelVariant} className={`${Style.serviceItemPart1} ${Style.active}`}>
 				<img src='' alt='' />
 				<h2>{item.name}</h2>
 			</motion.div>
-			<motion.div animate={isOpen ? "open" : "closed"} variants={LowLevelVariant} className={Style.serviceItemPart2}>
+			<motion.div animate={isActiveSection ? "open" : "closed"} variants={LowLevelVariant} className={Style.serviceItemPart2}>
 				<h2>{item.name}</h2>
 				<p>
 					{item.description}

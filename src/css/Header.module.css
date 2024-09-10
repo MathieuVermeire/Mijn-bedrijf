@@ -19,11 +19,26 @@
 
 .logo {
 	display: block;
+	position: relative;
 	width: max-content;
 	transition: .1s ease-in-out;
 }
 
-.header div {
+.logo img {
+	transition: .2s ease-in-out;
+}
+
+.logoNeg {
+	filter: invert();
+}
+
+.logo2 {
+	position: absolute;
+	right: -2px;
+	top: -8px;
+}
+
+.header > div {
 	flex: 0 0 30%;
 	width: max-content;
 	display: flex;
@@ -39,34 +54,41 @@
 
 .header ul li {
 	padding: 0 2rem;
-	transition: opacity .2s ease-in-out;
 	transition: padding .5s ease-in-out;
-	transition-delay: opacity .5s;
+	width: max-content;
+}
+
+.header ul li a div {
 	width: max-content;
 }
 
 .liDeactivate {
-	opacity: 0;
-	width: 0 !important;
-	padding: 0rem !important;
+
 }
 
-.header ul li a {
-	display: block;
-	width: max-content;
+.liDeactivate a {
+}
+
+.liActive a {
 }
 
 .contact {
 	background-color: #7200CC;
-	padding: 1.2rem 6rem;
+	padding: 2rem 6rem;
 	color: white;
 	margin-left: auto;
 	transition: .1s ease-in-out;
 	border-radius: 100px;
 }
 
-.liActive {
+.contactButton {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+/* .liActive {
 	opacity: 1;
 	width: 100%;
 	padding: 0 2rem;
-}
+} */

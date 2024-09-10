@@ -1,0 +1,93 @@
+.contact {
+    margin-top: 28rem;
+    margin-bottom: 20rem;
+}
+
+.title {
+    font-size: 10rem;
+    color: white;
+
+}
+
+.contactWrapper {
+    padding-top: 15rem;
+    padding-bottom: 25rem;
+    background-color: white;
+    border-radius: 50px 350px 25px 350px;
+    padding-left: 12.5rem;
+    padding-right: 15rem;
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 5rem;
+}
+
+.contactInfoWrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.form {
+    margin-top: 140px;
+    display: flex;
+    flex-flow: column;
+}
+
+.label {
+    font-size: 1.8rem;
+}
+
+.input {
+    margin-top: 3rem;
+    font-size: 8rem;
+    margin-bottom: 6.5rem;
+    padding-bottom: 3rem;
+    color: #9CA3AF;
+    border-bottom: 1px solid #E1E1E1;
+    width: 75%;
+    outline: none;
+    padding-left: 1rem
+}
+
+.form .text {
+    margin-top: 3rem;
+    margin-bottom: 6.5rem;
+    border-bottom: 1px solid #E1E1E1;
+    outline: none;
+    padding-left: 1rem;
+    min-height: 100px;
+    width: 100%;
+}
+
+.submit {
+    background: black;
+    color: white;
+    padding: 3rem 15rem;
+    border-radius: 95px;
+    margin-top: 5rem;
+}
+
+.contactSocialMedia {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.socialMediaIcon {
+    width: 13.6rem;
+    height: 13.6rem;
+    margin-left: 6rem;
+    background-color: #F3F3F3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 25%;  
+    }
+}

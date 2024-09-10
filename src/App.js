@@ -6,23 +6,24 @@ import Index from './pages/Index'
 import About from './pages/About'
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import ProjectsDetail from './pages/ProjectsDetail';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-		<>
+		<div className='app'>
 			<BrowserRouter>
-			<Header/>
+				<ScrollToTop />
+				<Header/>
 				<Routes>
 					<Route path='/' element={<Index/>}></Route>
 					<Route path='/over-mij' element={<About/>}></Route>
 					<Route path='/projecten' element={<Projects/>}></Route>
+					<Route path='/projecten/:projectId' element={<ProjectsDetail/>}></Route>
 					<Route path='/contact' element={<Contact/>}></Route>
 				</Routes>
 			</BrowserRouter>
-			<div className="App">
-
-			</div>
-	</>
+		</div>
   );
 }
 

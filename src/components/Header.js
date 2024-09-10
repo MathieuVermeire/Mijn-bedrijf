@@ -1,9 +1,9 @@
 import Style from '../css/Header.module.css';
 import Container from '../css/Header.module.css';
 
-import logo from '../assets/img/logo.svg';
-import logo2 from '../assets/img/logo2.svg';
-import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/img/logo/logo-part1.svg';
+import logo2 from '../assets/img/logo/logo-part2.svg';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useScroll, useTransform, motion, delay } from "framer-motion"
 
@@ -14,13 +14,17 @@ const Header = () => {
 	const [position, setPosition] = useState(window.scrollY)
     const [visible, setVisible] = useState(true);
 
-	console.log(scroll.scrollYProgress.current);
+	const location = useLocation();
 
-	const headerY = useTransform(
-		scroll.scrollYProgress,
-		[0, 0.1],
-		['0','-100%'],
-	  );
+	// console.log(location);
+
+	// console.log(scroll.scrollYProgress.current);
+
+	// const headerY = useTransform(
+	// 	scroll.scrollYProgress,
+	// 	[0, 0.1],
+	// 	['0','-100%'],
+	//   );
 
 	  const headerOpacity = useTransform(
 		scroll.scrollYProgress,
@@ -32,7 +36,7 @@ const Header = () => {
 		scroll.scrollYProgress,
 		[0, 0.1],
 		['0','100%'],
-		{delay: .5,}
+		{delay: 5,}
 	  );
 
 	  const headerpadding = useTransform(
@@ -67,15 +71,22 @@ const Header = () => {
 	return (
 		<header className={`container ${Style.header}`}>
 			<nav className=''>
-					<div><NavLink className={`${Style.logo} ${cls}`} to='/'><img src={logo2} alt='logo' /></NavLink></div>
+					<div><NavLink className={`${Style.logo} ${cls}`} to='/'>
+						<img className={location.pathname == '/contact' ? `${Style.logoNeg}` : ``} src={logo} alt='logo' />
+						<img className={location.pathname == '/contact' ? `${Style.logoNeg} ${Style.logo2}` : `${Style.logo2}`} src={logo2} alt='logo2' />
+					</NavLink></div>
 					<ul className=''>
 						<motion.li
 						style={{
 							opacity: headerOpacity,
 							width: headerWidth,
 							padding: headerpadding,
+						
 						  }}  
-						className=""><NavLink to='/'><motion.div style={{width: headerWidth}}>Home</motion.div></NavLink></motion.li>
+						className=""><NavLink to='/'><motion.div style={{
+							width: headerWidth,
+							display: headerDisplay,
+						}}>Home</motion.div></NavLink></motion.li>
 						<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
 						<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
 						<motion.li 
@@ -83,12 +94,14 @@ const Header = () => {
 							opacity: headerOpacity,
 							width: headerWidth,
 							padding: headerpadding,
-							display: headerDisplay,
 						  }}  
-						className=""><NavLink to='/contact'><motion.div style={{width: headerWidth}}>Contact</motion.div></NavLink></motion.li>
+						className=""><NavLink to='/contact'><motion.div style={{
+							width: headerWidth,
+							display: headerDisplay,
+						}} >Contact</motion.div></NavLink></motion.li>
 					</ul>
 					<div>
-						<button className={`${Style.contact} ${cls}`}><NavLink to='/contact'>Contact</NavLink></button>
+						 <NavLink className={`${Style.contact} ${cls}`} to='/contact'>Contact</NavLink>
 					</div>
 			</nav>
 		</header>
