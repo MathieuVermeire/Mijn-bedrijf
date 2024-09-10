@@ -4,7 +4,8 @@ import Slideshow from './ProjectsDetailpage/Slideshow';
 import HeadingImage from './ProjectsDetailpage/HeadingImage';
 import TextImage from './ProjectsDetailpage/TextImage';
 
-const ObjectRenderer = ({ data, projectId }) => {
+const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
+
   let pageItem;
   // const pageItem = data.map((item, i) => {
   //   if(item.link === projectId) {
@@ -18,7 +19,8 @@ const ObjectRenderer = ({ data, projectId }) => {
           return true;
       }
     });
-    console.log(pageItem);
+
+    // console.log(pageItem);
 
     if (typeof data === 'object' && data !== null) {
         return (
@@ -36,7 +38,7 @@ const ObjectRenderer = ({ data, projectId }) => {
                   {key == 'slideshow'
                   ? 
                   // <div>{pageItem.content.slideshow.images}</div>
-                  <Slideshow copy={pageItem.content.slideshow.copy} images={pageItem.content.slideshow.images} />
+                  <Slideshow copy={pageItem.content.slideshow.copy} images={pageItem.content.slideshow.images} slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} />
                   : 
                   ''
                   }

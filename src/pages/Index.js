@@ -83,7 +83,7 @@ const Home = () => {
 	const lgNegative = useTransform(ProjectColumns.scrollYProgress, [0, 1], [0, 250]);
 
 	return (
-		<div className={`container`}>
+		<div className={`container ${Style.wrapper}`}>
 			<h1 className='text-center'><strong>Steppers Studio</strong>, jouw persoonlijke branding, stap voor stap</h1>
 			<img className={Style.down} src={down} alt='' />
 			<motion.article className={Style.article}>

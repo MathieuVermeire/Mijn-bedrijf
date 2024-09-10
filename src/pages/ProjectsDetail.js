@@ -9,39 +9,11 @@ import projects from "../components/content/projects";
 import ObjectRenderer from '../components/ObjectRenderer';
 
 
-const ProjectsDetail = ({ props }) => {
+const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
     const {projectId} = useParams()
-
-    // console.log(projectId);
-    // console.log(props);
-
-    let content = [];
-
-    projects.forEach(item => {
-        if(item.link === projectId) {
-            if(item.content.textImageOne) {
-                content.push(item.content.textImageOne)
-            }
-    
-            if(item.content.slideshow) {
-                content.push(item.content.slideshow)
-            }
-            
-            if(item.content.textImageTwo) {
-                content.push(item.content.textImageTwo)
-            }
-
-        }
-    })
-
-    const thisProject = projects.find(project => project.link === projectId)
-    
-    // console.log(thisProject);
-
     return (
         <div className={`${Style.wrapper}`}>
-            <ObjectRenderer data={projects} projectId={projectId} />
-
+            <ObjectRenderer slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} data={projects} projectId={projectId} />
         </div>
         // projects.map((item, index) => (    
 

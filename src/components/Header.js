@@ -51,6 +51,12 @@ const Header = () => {
 		['none','flex'],
 	  );
 
+	  const headerPointer = useTransform(
+		scroll.scrollYProgress,
+		[0, 0.1],
+		['none','auto'],
+	  );
+
     useEffect(()=> {
         const handleScroll = () => {
            let moving = window.scrollY
@@ -78,26 +84,25 @@ const Header = () => {
 					<ul className=''>
 						<motion.li
 						style={{
-							opacity: headerOpacity,
 							width: headerWidth,
 							padding: headerpadding,
-						
 						  }}  
 						className=""><NavLink to='/'><motion.div style={{
 							width: headerWidth,
-							display: headerDisplay,
+							opacity: headerOpacity,
+							pointerEvents: headerPointer,
 						}}>Home</motion.div></NavLink></motion.li>
 						<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
 						<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
 						<motion.li 
 						style={{
-							opacity: headerOpacity,
 							width: headerWidth,
 							padding: headerpadding,
 						  }}  
 						className=""><NavLink to='/contact'><motion.div style={{
 							width: headerWidth,
-							display: headerDisplay,
+							opacity: headerOpacity,
+							pointerEvents: headerPointer,
 						}} >Contact</motion.div></NavLink></motion.li>
 					</ul>
 					<div>

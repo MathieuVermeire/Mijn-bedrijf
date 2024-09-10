@@ -1,6 +1,6 @@
-h1 {
-	margin-top: 27rem;
-	margin-bottom: 13.5rem;
+.wrapper {
+	padding-top: 27rem;
+	/* margin-bottom: 13.5rem; */
 }
 
 .down {

@@ -13,11 +13,8 @@ const SlideshowContext = createContext();
 // buttons for sliding through the slideshow
 // 
 
-const Slideshow = ({ copy, images }) => {
+const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
 	const [context, setContext] = useState(images);
-
-	console.log(context.items);
-	
 	const timer = useRef(null);
 
 	useEffect(() => {
@@ -41,8 +38,6 @@ const Slideshow = ({ copy, images }) => {
 		// return () => clearTimeout(timer.current);
 
 	});
-	
-	console.log(context)
 
 	const handleIndex = e => {
 		// let tmp = [...context];
@@ -53,21 +48,54 @@ const Slideshow = ({ copy, images }) => {
 
 		for (let i = 0; i < children.length; i++) {
 			const element = children[i];
-			if(parseInt(element.style.zIndex) >= children.length -1) {
-				element.style.zIndex = 0;
-			} else {
-				element.style.zIndex = parseInt(element.style.zIndex) + 1;
-				
+
+			if(slideshowTrack === 'Prev') {
+				if(parseInt(element.style.zIndex) <= 0) {
+					element.style.zIndex = children.length - 1;
+				} else {
+					element.style.zIndex = parseInt(element.style.zIndex) - 1;
+					
+				}
+			} else if(slideshowTrack === 'Next') {
+				if(parseInt(element.style.zIndex) >= children.length - 1) {
+					element.style.zIndex = 0;
+				} else {
+					element.style.zIndex = parseInt(element.style.zIndex) + 1;
+				}
 			}
-			console.log(element.style.zIndex);
+			// console.log(element.style.zIndex);
 		}
 		// e.currentTarget.children[0].style.zIndex = 0;
+	}
+
+	const handleSlideshowMouseEnter = e => {
+		onInSlideshow(true);
+	}
+
+	const handleSlideshowMouseLeave = e => {
+		onInSlideshow(false);
+	}
+
+	const handleSlideshowMouseMove = e => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		const y = e.clientY - rect.top;
+		const x = e.clientX - rect.left;
+
+		if(x <= rect.width / 2) {
+			onSlideshowTrack('Prev');
+			console.log(slideshowTrack);
+		} else {
+			onSlideshowTrack('Next')
+			console.log(slideshowTrack);
+		}
+
+		// console.log(rect.width)
 	}
 
 	return (
 			<div className={`container ${Style.slideshowWrapper}`}>
 				<p className={Style.slideshowCopy}>{copy}</p>
-				<div className={Style.slideshowGrabber} onClick={e => handleIndex(e)}
+				<div className={Style.slideshowGrabber} onMouseMove={e => handleSlideshowMouseMove(e)} onMouseEnter={e => handleSlideshowMouseEnter(e)} onMouseLeave={e => handleSlideshowMouseLeave(e)} onClick={e => handleIndex(e)}
 				>
 					{context.map((image, index) => (
 						<div style={{zIndex: context.length-index -1}} className={Style.slideshowItem} key={index}>
