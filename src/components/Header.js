@@ -83,14 +83,14 @@ const Header = () => {
 
 	const handleMobile = (e) => {
 		console.log(e);
-		
+
 		setHeaderOpen(!headerOpen);
 	}
 
 	return (
 		<header className={`${Style.header}`}>
 			<nav className={headerOpen === true ? `container ${Style.navigation} ${Style.open}` : `container ${Style.navigation}`}>
-					<div><NavLink className={`${Style.logo} ${cls}`} to='/'>
+					<div className={Style.first}><NavLink className={`${Style.logo} ${cls}`} to='/'>
 						<img className={location.pathname == '/contact' ? `${Style.logoNeg}` : ``} src={logo} alt='logo' />
 						<img className={location.pathname == '/contact' ? `${Style.logoNeg} ${Style.logo2}` : `${Style.logo2}`} src={logo2} alt='logo2' />
 					</NavLink></div>
@@ -99,7 +99,7 @@ const Header = () => {
 						style={{
 							width: headerWidth,
 							padding: headerpadding,
-						  }}  
+						  }}
 						className=""><NavLink to='/'><motion.div style={{
 							width: headerWidth,
 							opacity: headerOpacity,
@@ -108,11 +108,11 @@ const Header = () => {
 						}}>Home</motion.div></NavLink></motion.li>
 						<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
 						<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
-						<motion.li 
+						<motion.li
 						style={{
 							width: headerWidth,
 							padding: headerpadding,
-						  }}  
+						  }}
 						className=""><NavLink to='/contact'><motion.div style={{
 							width: headerWidth,
 							opacity: headerOpacity,
@@ -120,7 +120,7 @@ const Header = () => {
 							display: headerDisplay,
 						}} >Contact</motion.div></NavLink></motion.li>
 					</ul>
-					<div>
+					<div className={Style.second}>
 						 <NavLink className={`${Style.contact} ${cls}`} to='/contact'>Contact</NavLink>
 					</div>
 					<div onClick={e => handleMobile(e)} className={headerOpen === true ? `${Style.hamburger} ${Style.open}` : `${Style.hamburger}`}>
@@ -133,12 +133,12 @@ const Header = () => {
 			<nav className={headerOpen === true ? `${Style.mobileNav} ${Style.open}` : `${Style.mobileNav}`}>
 				<ul className=''>
 					<motion.li
-					className=""><NavLink to='/'><motion.div>Home</motion.div></NavLink></motion.li>
-					<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
-					<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
+					className=""><NavLink className={({isActive}) => isActive ? `${Style.active}` : ""} to='/'><motion.div>Home</motion.div></NavLink></motion.li>
+					<li className=''><NavLink className={({isActive}) => isActive ? `${Style.active}` : ""} to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
+					<li className=''><NavLink className={({isActive}) => isActive ? `${Style.active}` : ""} to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
 					<motion.li 
 					
-					className=""><NavLink to='/contact'><motion.div>Contact</motion.div></NavLink></motion.li>
+					className=""><NavLink className={({isActive}) => isActive ? `${Style.active}` : ""} to='/contact'><motion.div>Contact</motion.div></NavLink></motion.li>
 				</ul>			
 			</nav>
 		</header>

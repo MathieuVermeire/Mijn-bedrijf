@@ -26,8 +26,8 @@ const ServiceItems = ({ item, isActiveSection, id, onActiveIndex }) => {
 	};
 
 	return (
-		<motion.div onClick={toggleSection} animate={isActiveSection ? "open" : "closed"} variants={ItemVariant} id={id} className={Style.serviceItem}>
-			<motion.div animate={isActiveSection ? "closed" : "open"} variants={TopLevelVariant} className={`${Style.serviceItemPart1} ${Style.active}`}>
+		<motion.div transition={{duration: 2}} onClick={toggleSection} animate={isActiveSection ? "open" : "closed"} variants={ItemVariant} id={id} className={Style.serviceItem}>
+			<motion.div transition={{duration: 2}} animate={isActiveSection ? "closed" : "open"} variants={TopLevelVariant} className={`${Style.serviceItemPart1} ${Style.active}`}>
 				<img src='' alt='' />
 				<h2>{item.name}</h2>
 			</motion.div>

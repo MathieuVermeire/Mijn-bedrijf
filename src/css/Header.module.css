@@ -24,6 +24,20 @@
 	transition: .3s ease-in-out;
 }
 
+.first {
+	flex: 33%;
+}
+
+.second {
+	flex: 33%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header nav ul {
+	flex: 33%;
+}
+
 .logo {
 	display: block;
 	position: relative;
@@ -144,7 +158,7 @@
 	transition: .1s ease-in-out;
 
 }
-  
+
 .hamburger span:nth-child(2),.hamburger span:nth-child(3) {
 	top: 12px;
 }
@@ -187,6 +201,11 @@
 	background: white;
 }
 
+.mobileNav.open {
+	opacity: 1;
+	pointer-events: all;
+}
+
 .mobileNav {
 	background: #111111;
 	opacity: 0;
@@ -199,18 +218,43 @@
 	pointer-events: none;
 	transition: .3s ease-in-out;
 	color: white;
-}
-
-.mobileNav.open {
-	opacity: 1;
-
+	display: flex;
 }
 
 .mobileNav ul {
 	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding-left: 15vw;
+	flex-flow: column;
+	justify-content: center;
+	padding-left: 13vw;
+	width: 100%;
+}
+
+.mobileNav ul li {
+	font-size: 8rem;
+	font-weight: 400;
+	width: 100%;
+	padding: 0;
+}
+
+.mobileNav ul li a {
+	display: block;
+	width: 100%;
+	padding: 5rem 5rem;
+	border-radius: 100px 0px 0px 100px;
+}
+
+.mobileNav ul li a.active {
+	background-color: #ECECEC;
+}
+
+@media screen and (max-width: 768px) {
+	.mobileNav ul li a {
+		padding: 4vh 5rem;
+	}	
+
+	.mobileNav ul li {
+		font-size: 12vw;
+	}
 }
 
 
@@ -226,5 +270,9 @@
 	.hamburger {
 		display: flex;
 		margin-top: 1rem;
+	}
+
+	.second{
+		 display: none;
 	}
 }

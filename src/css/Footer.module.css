@@ -22,7 +22,7 @@
 .footerContact {
     display: flex;
     flex-flow: column;
-    
+
 }
 
 .primaryNavigation {
@@ -78,3 +78,20 @@
         padding-top: 10rem;
     }
 }
+
+@media screen and (max-width: 640px) {
+	.primaryNavigation  {
+		flex-flow: column;
+		align-items: flex-start;
+    }
+
+	.primaryNavigation .navList {
+		padding-right: 0;
+	}
+
+	.footerBrand {
+		margin-right: 4rem;
+	}
+}
+
+
