@@ -88,13 +88,13 @@ const Header = () => {
 	}
 
 	return (
-		<header className={`container ${Style.header}`}>
-			<nav className=''>
+		<header className={`${Style.header}`}>
+			<nav className={headerOpen === true ? `container ${Style.navigation} ${Style.open}` : `container ${Style.navigation}`}>
 					<div><NavLink className={`${Style.logo} ${cls}`} to='/'>
 						<img className={location.pathname == '/contact' ? `${Style.logoNeg}` : ``} src={logo} alt='logo' />
 						<img className={location.pathname == '/contact' ? `${Style.logoNeg} ${Style.logo2}` : `${Style.logo2}`} src={logo2} alt='logo2' />
 					</NavLink></div>
-					<ul className=''>
+					<ul className={Style.menu}>
 						<motion.li
 						style={{
 							width: headerWidth,
@@ -129,6 +129,17 @@ const Header = () => {
 						<span></span>
 						<span></span>
 					</div>
+			</nav>
+			<nav className={headerOpen === true ? `${Style.mobileNav} ${Style.open}` : `${Style.mobileNav}`}>
+				<ul className=''>
+					<motion.li
+					className=""><NavLink to='/'><motion.div>Home</motion.div></NavLink></motion.li>
+					<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
+					<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
+					<motion.li 
+					
+					className=""><NavLink to='/contact'><motion.div>Contact</motion.div></NavLink></motion.li>
+				</ul>			
 			</nav>
 		</header>
 	 );

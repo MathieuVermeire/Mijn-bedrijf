@@ -165,7 +165,7 @@ img {
     position: fixed;
     transform: translateX(-50%) translateY(-50%);
     pointer-events:none;
-	z-index: 9999;
+	z-index: 9997;
 }
 
 .cursor-in {
@@ -220,6 +220,10 @@ img {
 @media screen and (max-width: 1025px) {
 	.react-slideshow-fadezoom-wrapper {
 		height: 40rem;
+	}
+
+	.head-hidden {
+		opacity: 1;
 	}
 }
 
