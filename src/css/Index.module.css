@@ -54,7 +54,7 @@
 }
 
 .serviceItemWrapper {
-	
+
 }
 
 .servicesWrapper {
@@ -63,9 +63,13 @@
 	margin-top: 15rem;
 }
 
-.serviceItem:first-child {
-	/* margin-top: 15rem; */
+.serviceItemWrapper:first-child {
 	border-top: 1px solid black;
+
+}
+
+.serviceItemWrapper {
+	border-bottom: 1px solid black;
 }
 
 .serviceItem {
@@ -73,7 +77,6 @@
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	border-bottom: 1px solid black;
 	cursor: pointer;
 }
 

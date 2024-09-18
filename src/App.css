@@ -112,9 +112,13 @@ img {
 	.container {
 		max-width: 600px;
 		padding: 0 5rem;
-
 	}
+}
 
+@media screen and (min-width: 700px) {
+	.container {
+		max-width: 650px;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -123,9 +127,21 @@ img {
 	}
 }
 
+@media screen and (min-width: 850px) {
+	.container {
+		max-width: 800px;
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	.container {
 		max-width: 1000px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1100px;
 	}
 }
 
@@ -169,9 +185,9 @@ img {
 }
 
 .cursor-in {
-    height: 0px;
-    width: 0px;
-    border-radius: 50%;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
 	background-color: white;
 	transition: .1s ease-in-out;
 	display: flex;
@@ -202,6 +218,7 @@ img {
 	width: 50% !important;
 	background-color: transparent;
 	background: transparent;
+	opacity: 0;
 }
 
 .react-slideshow-container .default-nav:hover {
@@ -230,4 +247,18 @@ img {
 .react-slideshow-fadezoom-wrapper img {
 	height: 100%;
 	width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+	h1 {
+
+	}
+
+	h2 {
+		font-size: 4rem;
+	}
+
+	.head-hidden {
+		opacity: 1;
+	}
 }

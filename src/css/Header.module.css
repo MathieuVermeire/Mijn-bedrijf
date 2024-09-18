@@ -17,6 +17,20 @@
 	flex: 0 0 30%;
 }
 
+.first {
+	flex: 33%;
+}
+
+.second {
+	flex: 33%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header nav ul {
+	flex: 33%;
+}
+
 .logo {
 	display: block;
 	position: relative;
@@ -137,7 +151,7 @@
 	transition: .1s ease-in-out;
 
 }
-  
+
 .hamburger span:nth-child(2),.hamburger span:nth-child(3) {
 	top: 12px;
 }
