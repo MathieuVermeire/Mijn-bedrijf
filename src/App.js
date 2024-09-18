@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import "react-slideshow-image/dist/styles.css";
+
 import './App.css';
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -9,6 +11,7 @@ import Contact from './pages/Contact';
 import ProjectsDetail from './pages/ProjectsDetail';
 import ScrollToTop from './components/ScrollToTop';
 import { useRef, useState } from 'react';
+import Footer from './components/Footer';
 
 function App() {
 	let mouseRef = useRef(null);
@@ -28,8 +31,8 @@ function App() {
 
 		setTimeout(() => {
 			setMouseState({
-				xMain: clientX,
-				yMain: clientY,
+				xMain: clientX - 40,
+				yMain: clientY - 40,
 			})
 		  }, 100);
 
@@ -41,7 +44,7 @@ function App() {
 	return (
 			<div className='app' onMouseMove={handleMouseMove}>
 				<div className={inSlideshow ? `cursor cursor-large` : `cursor`} style={{left: mouseState.xMain, top: mouseState.yMain}} ref={mouseRef}>
-					<div className='cursor-in'>{inSlideshow ? slideshowTrack : ''}</div>
+					<div style={inSlideshow ? {opacity: `1`} :  {opacity: 0}} className='cursor-in'>{inSlideshow ? slideshowTrack : ''}</div>
 				</div>
 				<BrowserRouter>
 					<ScrollToTop />
@@ -53,6 +56,7 @@ function App() {
 						<Route path='/projecten/:projectId' element={<ProjectsDetail slideshowTrack={slideshowTrack} onSlideshowTrack={setSlideshowTrack} onInSlideshow={setInSlideshow}/>}></Route>
 						<Route path='/contact' element={<Contact/>}></Route>
 					</Routes>
+					<Footer />
 				</BrowserRouter>
 			</div>
 	);

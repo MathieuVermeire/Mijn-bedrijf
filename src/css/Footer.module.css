@@ -1,0 +1,80 @@
+.footer {
+    background-color: #111111;
+    color: white;
+    padding: 16.5rem 0 5rem 0;
+    border-radius: 0px 300px 0px 0px;
+    font-size: 2.4rem
+}
+
+.footerBrand {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.logo {
+    filter: invert(1);
+    width: 20rem;
+}
+
+.footerContact {
+    display: flex;
+    flex-flow: column;
+    
+}
+
+.primaryNavigation {
+    display: flex;
+    align-items: flex-end;
+    color: #5a5a5a;
+    padding-top: 9rem;
+}
+
+.primaryNavigation .navList {
+    display: flex;
+    flex-flow: column;
+    padding-right: 20rem;
+    gap: 1rem;
+}
+
+.primaryNavigation .contact {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.secondaryNavigation {
+    display: flex;
+    column-gap: 4rem;
+    padding-top: 20rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1025px) {
+    .logo {
+        /* filter: invert(1); */
+        width: 10rem;
+    }
+
+    .footer {
+        font-size: 1.6rem
+    }
+
+    .primaryNavigation .navList {
+        gap: .5rem;
+    }
+
+    .primaryNavigation .contact {
+        gap: .5rem;
+    }
+
+    .primaryNavigation {
+        padding-top: 5rem;
+    }
+
+    .secondaryNavigation {
+        padding-top: 10rem;
+    }
+}

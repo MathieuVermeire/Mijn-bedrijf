@@ -47,8 +47,14 @@ const Header = () => {
 
 	  const headerDisplay = useTransform(
 		scroll.scrollYProgress,
-		[0, 0.1],
+		[0, 0.3],
 		['none','flex'],
+	  );
+
+	  const headerPosition = useTransform(
+		scroll.scrollYProgress,
+		[0, 0.1],
+		['static','absolute'],
 	  );
 
 	  const headerPointer = useTransform(
@@ -73,6 +79,13 @@ const Header = () => {
 
 		const cls = scroll.scrollYProgress.current < 0.01 ? "head-visible" : "head-hidden";
 
+	const [headerOpen, setHeaderOpen] = useState(null);
+
+	const handleMobile = (e) => {
+		console.log(e);
+		
+		setHeaderOpen(!headerOpen);
+	}
 
 	return (
 		<header className={`container ${Style.header}`}>
@@ -91,6 +104,7 @@ const Header = () => {
 							width: headerWidth,
 							opacity: headerOpacity,
 							pointerEvents: headerPointer,
+							display: headerDisplay,
 						}}>Home</motion.div></NavLink></motion.li>
 						<li className=''><NavLink to='/projecten'><motion.div>Projecten</motion.div></NavLink></li>
 						<li className=''><NavLink to='/over-mij'><motion.div>Over mij</motion.div></NavLink></li>
@@ -103,10 +117,17 @@ const Header = () => {
 							width: headerWidth,
 							opacity: headerOpacity,
 							pointerEvents: headerPointer,
+							display: headerDisplay,
 						}} >Contact</motion.div></NavLink></motion.li>
 					</ul>
 					<div>
 						 <NavLink className={`${Style.contact} ${cls}`} to='/contact'>Contact</NavLink>
+					</div>
+					<div onClick={e => handleMobile(e)} className={headerOpen === true ? `${Style.hamburger} ${Style.open}` : `${Style.hamburger}`}>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
 			</nav>
 		</header>

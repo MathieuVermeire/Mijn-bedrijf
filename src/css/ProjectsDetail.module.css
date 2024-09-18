@@ -1,73 +1,140 @@
 .wrapper {
-	padding-top: 285px;
-	padding-bottom: 285px;
+	padding-top: 200px;
+	padding-bottom: 150px;
 }
 
-.headingText h2 {
-	margin-bottom: 23px;
+.textImage {
+	display: flex;
+	flex-flow: column;
+	margin-top: 8rem;
+}
+
+.textImageCopy {
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+	padding-right: 0rem;
+}
+
+.textImageCopy h2 {
+	margin-bottom: 3rem;
+}
+
+
+.textImageImage {
+	margin-top: 4rem;
+	width: 100%;
+	height: 40rem;
+	border-radius: 50px;
+}
+
+.textImageMirror .textImageCopy {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .headingimage {
 	width: 100%;
 	height: 700px;
 	object-fit: cover;
-	border-radius: 300px 50px 50px 0px;
+	border-radius: 150px 0px 50px 0px;
 }
+
 .headingimageWrapper {
 	margin-top: 70px;
 }
 
-.textImage {
-	margin-top: 200px;
-	display: flex;
-	justify-content: space-between;
+.headingText h2 {
+	margin-bottom: 23px;
 }
 
-.textImageCopy {
-	display: flex;
-	flex-flow: column;
-	padding-right: 7rem;
-	margin-top: 45px;
-	width: 50%;
-}
-
-
-.textImageP {
-	margin-top: 5rem;
-}
-
-.textImageImage {
-	width: 45%;
-	height: 80rem;
-	border-radius: 50px;
-}
-
-.textImageMirror {
-	flex-direction: row-reverse;
-}
-
-.textImageMirror .textImageCopy {
-	padding-right: 0;
-	padding-left: 7rem;
+.slideshowWrapper {
+	margin-top: 7rem;
 }
 
 .slideshowGrabber {
 	margin-top: 9rem;
 	position: relative;
-	height: 800px;
+	height: 40rem;
 }
 
-.slideshowItem {
-	position: absolute;
-	height: 800px;
-	width: 100%;
+.slideshowWrapper {
+	margin-top: 7rem;
 }
 
 .slideshowCopy {
 	width: 80%;
-	margin-top: 20rem;
+	/* margin-top: 20rem; */
 
 }
+
+@media screen and (min-width: 1024px) {
+	.wrapper {
+		padding-top: 285px;
+		padding-bottom: 285px;
+	}
+
+	.headingimage {
+		border-radius: 300px 50px 50px 0px;
+	}
+	
+	.textImage {
+		margin-top: 20rem;
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+	}
+	
+	.textImageCopy {
+		padding-right: 7rem;
+		margin-top: 45px;
+		width: 50%;
+	}
+
+	.textImageCopy h2 {
+		margin-bottom: 0rem;
+	}
+	
+	.textImageP {
+		margin-top: 5rem;
+	}
+	
+	.textImageImage {
+		width: 45%;
+		height: 80rem;
+	}
+	
+	.textImageMirror {
+		flex-direction: row-reverse;
+	}
+	
+	.textImageMirror .textImageCopy {
+		padding-right: 0;
+		padding-left: 7rem;
+	}
+
+	.slideshowGrabber {
+		margin-top: 9rem;
+		position: relative;
+		height: 80rem;
+	}
+
+	.slideshowWrapper {
+		margin-top: 20rem;
+	}
+}
+
+/* .slideshowItem {
+	position: absolute;
+	height: 100%;
+	transition: .3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
 
 .slideshowImage {
 	width: 100%;
@@ -75,7 +142,7 @@
 	border-radius: 50px;
 	object-fit: cover;
 	height: 800px;
-}
+} */
 
 .text {
 }

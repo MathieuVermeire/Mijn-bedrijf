@@ -104,12 +104,15 @@ img {
 
 .container {
 	margin: auto;
-	padding: 0 5rem;
+	padding: 0 2rem;
+
 }
 
 @media screen and (min-width: 640px) {
 	.container {
 		max-width: 600px;
+		padding: 0 5rem;
+
 	}
 
 }
@@ -122,7 +125,7 @@ img {
 
 @media screen and (min-width: 1024px) {
 	.container {
-		max-width: 900px;
+		max-width: 1000px;
 	}
 }
 
@@ -191,4 +194,40 @@ img {
     z-index: 100001;
     height: 9px;
     width: 9px;
+}
+
+.react-slideshow-container .default-nav {
+	height: 100%;
+	border-radius: 0;
+	width: 50% !important;
+	background-color: transparent;
+	background: transparent;
+}
+
+.react-slideshow-container .default-nav:hover {
+	background: transparent;
+}
+
+.react-slideshow-container svg {
+	display: none;
+}
+
+.react-slideshow-fadezoom-wrapper {
+	height: 80rem;
+	border-radius: 5rem;
+}
+
+@media screen and (max-width: 1025px) {
+	.react-slideshow-fadezoom-wrapper {
+		height: 40rem;
+	}
+}
+
+.react-slideshow-fadezoom-wrapper div {
+	height: 100%;
+}
+
+.react-slideshow-fadezoom-wrapper img {
+	height: 100%;
+	width: 100%;
 }

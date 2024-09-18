@@ -1,7 +1,7 @@
 import Style from '../../css/ProjectsDetail.module.css';
 import { createContext, useState, useRef, useEffect } from 'react';
 import SlideshowItem from './SlideshowItem';
-
+import { Slide, Fade } from "react-slideshow-image";
 const SlideshowContext = createContext();
 
 // **** CREATE SLIDESHOW ****
@@ -46,21 +46,39 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 		// setContext(tmp);
 		let children = e.currentTarget.children;
 
+		let part1 = e.currentTarget.children[0];
+		let part2 = e.currentTarget.children[1];
+
+		// console.log(part1, part2);
+
 		for (let i = 0; i < children.length; i++) {
 			const element = children[i];
-
+			element.style.opacity = 1;
 			if(slideshowTrack === 'Prev') {
 				if(parseInt(element.style.zIndex) <= 0) {
-					element.style.zIndex = children.length - 1;
+					element.style.opacity = 0;
+					setTimeout(() => {
+						element.style.zIndex = children.length - 1;
+					}, 300);
+
 				} else {
-					element.style.zIndex = parseInt(element.style.zIndex) - 1;
-					
+					element.style.opacity = 1;
+					setTimeout(() => {
+						element.style.zIndex = parseInt(element.style.zIndex) - 1;
+					}, 300);
 				}
 			} else if(slideshowTrack === 'Next') {
 				if(parseInt(element.style.zIndex) >= children.length - 1) {
-					element.style.zIndex = 0;
+					element.style.opacity = 0;
+					setTimeout(() => {
+						element.style.zIndex = 0;
+		
+					}, 300);
 				} else {
-					element.style.zIndex = parseInt(element.style.zIndex) + 1;
+					element.style.opacity = 1;
+					setTimeout(() => {
+						element.style.zIndex = parseInt(element.style.zIndex) + 1;
+					}, 300);
 				}
 			}
 			// console.log(element.style.zIndex);
@@ -78,15 +96,15 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 
 	const handleSlideshowMouseMove = e => {
 		const rect = e.currentTarget.getBoundingClientRect();
-		const y = e.clientY - rect.top;
+		const y = e.clientY - rect.top + 20;
 		const x = e.clientX - rect.left;
 
 		if(x <= rect.width / 2) {
 			onSlideshowTrack('Prev');
-			console.log(slideshowTrack);
+			// console.log(slideshowTrack);
 		} else {
 			onSlideshowTrack('Next')
-			console.log(slideshowTrack);
+			// console.log(slideshowTrack);
 		}
 
 		// console.log(rect.width)
@@ -97,12 +115,14 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 				<p className={Style.slideshowCopy}>{copy}</p>
 				<div className={Style.slideshowGrabber} onMouseMove={e => handleSlideshowMouseMove(e)} onMouseEnter={e => handleSlideshowMouseEnter(e)} onMouseLeave={e => handleSlideshowMouseLeave(e)} onClick={e => handleIndex(e)}
 				>
-					{context.map((image, index) => (
-						<div style={{zIndex: context.length-index -1}} className={Style.slideshowItem} key={index}>
-							{/* <img src={image} /> */}
-							<SlideshowItem image={image} slideshowContext={SlideshowContext} ></SlideshowItem>
-						</div>
-					))}
+					<Fade className='part1'>
+						{context.map((image, index) => (
+							<div style={{zIndex: context.length-index -1}} className={Style.slideshowItem} key={index}>
+								{/* <img src={image} /> */}
+								<SlideshowItem image={image} slideshowContext={SlideshowContext} ></SlideshowItem>
+							</div>
+						))}
+					</Fade>
 				</div>
 				
 			</div>
