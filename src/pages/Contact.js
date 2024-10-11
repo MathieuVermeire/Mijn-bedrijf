@@ -13,16 +13,16 @@ const Contact = () => {
 			</style>
 			<div className='container'>
 				<div className={Style.contact}>
-					<h1 className={Style.title}>
+					<h1 className={`titleAnimation ${Style.title}`}>
 						Contact
 					</h1>
 
 					<div className={Style.contactWrapper}>
 						<article className={Style.contactInfo}>
 							<div className={Style.contactInfoWrapper}>
-								<p>Mathieu Vermeire</p>
-								<p>0485 67 84 55</p>
-								<p>mathieuvermeire2@gmail.com</p>
+								<p className=''>Mathieu Vermeire</p>
+								<p className=''>0485 67 84 55</p>
+								<p className=''>mathieuvermeire2@gmail.com</p>
 							</div>
 							<div className={Style.contactSocialMedia}>
 								<Link target='_blank' to={'https://www.instagram.com'} className={Style.socialMediaIcon}>
@@ -30,10 +30,10 @@ const Contact = () => {
 								</Link>
 								<Link target='_blank' to={'https://www.instagram.com'} className={Style.socialMediaIcon}>
 									<img className={Style.image} src={facebook} />
-								</Link>	
+								</Link>
 								<Link target='_blank' to={'https://www.instagram.com'} className={Style.socialMediaIcon}>
 									<img className={Style.image} src={linkedin} />
-								</Link>	
+								</Link>
 							</div>
 						</article>
 						<form className={Style.form}>

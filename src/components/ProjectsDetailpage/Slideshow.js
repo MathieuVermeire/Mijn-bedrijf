@@ -2,6 +2,11 @@ import Style from '../../css/ProjectsDetail.module.css';
 import { createContext, useState, useRef, useEffect } from 'react';
 import SlideshowItem from './SlideshowItem';
 import { Slide, Fade } from "react-slideshow-image";
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const SlideshowContext = createContext();
 
 // **** CREATE SLIDESHOW ****
@@ -11,33 +16,31 @@ const SlideshowContext = createContext();
 // array of images
 // a image is removed and then added at the beginning of the array on each slide attempt. This way the image will always become visible again.
 // buttons for sliding through the slideshow
-// 
+//
 
 const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
 	const [context, setContext] = useState(images);
 	const timer = useRef(null);
 
 	useEffect(() => {
-		// if (timer.current) clearTimeout(timer.current);
-		// timer.current = setTimeout(() => {
-		// 	// Move deactivated slide out when edge is false
-		// 	// Move activated slide in when edge is true
-		// 	let tmp = context.items;
-		// 	let item;
-		// 	if (context.items.length > 1) {
-		// 		// item = tmp.shift();
-		// 		// tmp.push(item);
-		// 	}
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.slideshowGrabber',
+				toggleActions: 'play reverse play reverse',
+				start: 'top 50%',
+				end:'bottom 50%',
+				// markers: true,
+			}
+		});
 
+		tl.to('.slideshowGrabber', {
+			scale: 1,
+			duration: .8,
+			ease: 'sine.inOut',
 
-			
+		})
 
-		// 	// setContext({ ...context });
-		// }, 2500);
-
-		// return () => clearTimeout(timer.current);
-
-	});
+	}, []);
 
 	const handleIndex = e => {
 		// let tmp = [...context];
@@ -72,7 +75,7 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 					element.style.opacity = 0;
 					setTimeout(() => {
 						element.style.zIndex = 0;
-		
+
 					}, 300);
 				} else {
 					element.style.opacity = 1;
@@ -112,19 +115,19 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 
 	return (
 			<div className={`container ${Style.slideshowWrapper}`}>
-				<p className={Style.slideshowCopy}>{copy}</p>
-				<div className={Style.slideshowGrabber} onMouseMove={e => handleSlideshowMouseMove(e)} onMouseEnter={e => handleSlideshowMouseEnter(e)} onMouseLeave={e => handleSlideshowMouseLeave(e)} onClick={e => handleIndex(e)}
+				<p className={`textAnimation ${Style.slideshowCopy}`}>{copy}</p>
+				<div className={`slideshowGrabber ${Style.slideshowGrabber}`} onMouseMove={e => handleSlideshowMouseMove(e)} onMouseEnter={e => handleSlideshowMouseEnter(e)} onMouseLeave={e => handleSlideshowMouseLeave(e)} onClick={e => handleIndex(e)}
 				>
 					<Fade className='part1'>
 						{context.map((image, index) => (
-							<div style={{zIndex: context.length-index -1}} className={Style.slideshowItem} key={index}>
+							<div style={{zIndex: context.length-index -1}} className={`slideshowItem ${Style.slideshowItem}`} key={index}>
 								{/* <img src={image} /> */}
 								<SlideshowItem image={image} slideshowContext={SlideshowContext} ></SlideshowItem>
 							</div>
 						))}
 					</Fade>
 				</div>
-				
+
 			</div>
 		// <SlideshowContext.Provider value={[context, setContext]}>
 		// </SlideshowContext.Provider>

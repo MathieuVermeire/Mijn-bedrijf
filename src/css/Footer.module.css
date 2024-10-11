@@ -1,17 +1,40 @@
 .footer {
-    background-color: #111111;
     color: white;
     padding: 16.5rem 0 5rem 0;
-    border-radius: 0px 300px 0px 0px;
-    font-size: 2.4rem
+    font-size: 2.4rem;
+	z-index: 9997;
+	position: relative;
+
+}
+
+.footerBackground {
+	width: 100%;
+	height: 100%;
+	background-color: #111111;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0px 100px 0px 0px;
+	z-index: -1;
+	transform-origin: bottom;
+	transform: translateY(20%);
+	opacity: 0;
 }
 
 .footerBrand {
     padding-bottom: 5rem;
-    border-bottom: 1px solid white;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+	position: relative;
+}
+
+.brandLine {
+	border-bottom: 1px solid white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
 }
 
 .logo {
@@ -27,22 +50,31 @@
 
 .primaryNavigation {
     display: flex;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     color: #5a5a5a;
     padding-top: 9rem;
 }
 
 .primaryNavigation .navList {
     display: flex;
-    flex-flow: column;
-    padding-right: 20rem;
-    gap: 1rem;
+    padding-left: 20rem;
+    gap: 2.5rem;
+	font-size: 4rem;
+	width: 100%;
+	flex-wrap: wrap;
+	flex-flow: column;
 }
+
+.navList a:hover, .contact a:hover {
+	color: white;
+}
+
 
 .primaryNavigation .contact {
     display: flex;
     flex-flow: column;
     gap: 1rem;
+	font-size: 2rem;
 }
 
 .secondaryNavigation {
@@ -62,12 +94,26 @@
         font-size: 1.6rem
     }
 
+	.primaryNavigation {
+		flex-flow: column-reverse;
+		align-items: flex-start;
+	}
+
     .primaryNavigation .navList {
-        gap: .5rem;
+        gap: 2rem;
+		padding-left: 0;
+		padding-top: 2rem;
     }
 
+	.navList li {
+		flex: 100%;
+		width: 100%;
+	}
+
     .primaryNavigation .contact {
+		padding-top: 5rem;
         gap: .5rem;
+		font-size: 1.6rem;
     }
 
     .primaryNavigation {

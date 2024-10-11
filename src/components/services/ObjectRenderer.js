@@ -1,8 +1,8 @@
 import React from 'react';
-import HeadingText from './ProjectsDetailpage/HeadingText';
-import Slideshow from './ProjectsDetailpage/Slideshow';
-import HeadingImage from './ProjectsDetailpage/HeadingImage';
-import TextImage from './ProjectsDetailpage/TextImage';
+import HeadingText from '../ProjectsDetailpage/HeadingText';
+import Slideshow from '../ProjectsDetailpage/Slideshow';
+import HeadingImage from '../ProjectsDetailpage/HeadingImage';
+import TextImage from '../ProjectsDetailpage/TextImage';
 
 const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
 
@@ -29,43 +29,50 @@ const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onI
 
                 <li key={key}>
                   {key == 'title'
-                  ? 
-                  <HeadingText Title={pageItem.content.title} copy={pageItem.content.description} /> 
-                  : 
+                  ?
+                  <HeadingText Title={pageItem.content.title} copy={pageItem.content.description} />
+                  :
                   ''
                   }
 
                   {key == 'slideshow'
-                  ? 
+                  ?
                   // <div>{pageItem.content.slideshow.images}</div>
                   <Slideshow copy={pageItem.content.slideshow.copy} images={pageItem.content.slideshow.images} slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} />
-                  : 
+                  :
                   ''
                   }
 
                   {key == 'headerImage'
-                  ? 
+                  ?
                   // <div>{pageItem.content.slideshow.images}</div>
                   <HeadingImage image={pageItem.content.headerImage} />
-                  : 
+                  :
                   ''
                   }
 
                   {key == 'textImageOne'
-                  ? 
-                  <TextImage title={pageItem.content.textImageOne.title} copy={pageItem.content.textImageOne.copy} image={pageItem.content.textImageOne.image} mirror={pageItem.content.textImageOne.mirror} />                  
-                  : 
+                  ?
+                  <TextImage title={pageItem.content.textImageOne.title} copy={pageItem.content.textImageOne.copy} webLink={pageItem.content.textImageOne.webLink} image={pageItem.content.textImageOne.image} mirror={pageItem.content.textImageOne.mirror} />
+                  :
                   ''
                   }
 
                   {key == 'textImageTwo'
-                  ? 
-                  <TextImage title={pageItem.content.textImageTwo.title} copy={pageItem.content.textImageTwo.copy} image={pageItem.content.textImageTwo.image} mirror={pageItem.content.textImageTwo.mirror} />                  
-                  : 
+                  ?
+                  <TextImage title={pageItem.content.textImageTwo.title} copy={pageItem.content.textImageTwo.copy} webLink={pageItem.content.textImageTwo.webLink} image={pageItem.content.textImageTwo.image} mirror={pageItem.content.textImageTwo.mirror} />
+                  :
                   ''
                   }
 
-                
+									{key == 'textImageThree'
+                  ?
+                  <TextImage title={pageItem.content.textImageThree.title} copy={pageItem.content.textImageThree.copy} webLink={pageItem.content.textImageThree.webLink} image={pageItem.content.textImageThree.image} mirror={pageItem.content.textImageThree.mirror} />
+                  :
+                  ''
+                  }
+
+
                 {/* <strong>{key}: </strong>
                 {value.toString()} */}
 
@@ -76,9 +83,9 @@ const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onI
       } else {
         return <span>{data.toString()}</span>;
       }
-            
+
     //   Object.keys(pageItem.content).map((key) => (
-                
+
     //     const value = pageItem.content[key];
     //     // console.log(key);
     //     if(key === 'title') {

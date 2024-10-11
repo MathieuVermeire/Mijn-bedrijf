@@ -1,6 +1,5 @@
 .contact {
     margin-top: 28rem;
-    margin-bottom: 20rem;
 }
 
 .title {
@@ -16,6 +15,7 @@
     border-radius: 50px 350px 25px 350px;
     padding-left: 12.5rem;
     padding-right: 15rem;
+	margin-top: 10rem;
 }
 
 .contactInfo {
@@ -61,6 +61,7 @@
     padding-left: 1rem;
     min-height: 100px;
     width: 100%;
+	color: #7c838e;
 }
 
 .submit {
@@ -88,6 +89,99 @@
     align-items: center;
 
     & img {
-      width: 25%;  
+      width: 25%;
     }
 }
+@media screen and (max-width: 1275px) {
+	.contactInfo {
+		flex-flow: column;
+	}
+
+	.contactSocialMedia {
+		width: 100%;
+		justify-content: flex-start;
+		margin-top: 3rem;
+	}
+
+	.socialMediaIcon {
+		width: 10rem;
+		height: 10rem;
+		flex-shrink: 0;
+		margin-left: 0;
+		margin-right: 3rem;
+	}
+}
+@media screen and (max-width: 1024px) {
+
+	.input {
+		width: 100%;
+	}
+
+	.contactWrapper {
+		padding-left: 8rem;
+		padding-right: 8rem;
+		width: 90vw;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+
+@media screen and (max-width: 600px) {
+	.form {
+		margin-top: 8rem;
+	}
+
+	.contact {
+		margin-top: 20rem;
+		margin-bottom: 0rem;
+	}
+
+	.contactWrapper {
+		margin-top: 5rem;
+		padding-left: 3rem;
+        padding-right: 3rem;
+	}
+
+	.contactInfoWrapper {
+		p {
+			font-size: 1.4rem;
+		}
+	}
+
+	.title {
+		font-size: 6rem;
+	}
+
+	.contactWrapper {
+		width: 100vw;
+	}
+
+	.socialMediaIcon {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.socialMediaIcon img {
+		width: 40%;
+	}
+
+	.input {
+		font-size: 5rem;
+	}
+
+	.submit {
+		padding: 3rem 0;
+		width: 100%;
+	}
+}
+

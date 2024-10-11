@@ -1,3 +1,7 @@
+.header {
+	font-size: 9rem;
+}
+
 .wrapper {
 	padding-top: 27rem;
 	/* margin-bottom: 13.5rem; */
@@ -27,7 +31,8 @@
 	overflow: hidden;
 	border-radius: 50px;
 	width: 100%;
-	height: 800px;
+	height: 600px;
+	transform: scale(.95);
 }
 
 .introChild img {
@@ -54,8 +59,20 @@
 }
 
 .serviceItemWrapper {
-
+	position: relative;
 }
+
+.serviceItemLine {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px black solid;
+}
+
+.serviceItemLineBottom {
+	bottom: 0;
+}
+
 
 .servicesWrapper {
 	display: flex;
@@ -64,52 +81,117 @@
 }
 
 .serviceItemWrapper:first-child {
-	border-top: 1px solid black;
-
+	/* border-top: 1px solid black; */
 }
 
 .serviceItemWrapper {
-	border-bottom: 1px solid black;
+	/* border-bottom: 1px solid black; */
+	display: grid;
 }
 
 .serviceItem {
 	padding: 5rem 0;
 	width: 100%;
-	display: flex;
+	display: grid;
 	justify-content: center;
 	cursor: pointer;
+	transition: .3s ease-in-out;
 }
 
-.serviceItem h2 {
+.serviceItemPart2 h2 {
+	margin-bottom: 3rem;
+}
+
+.serviceItemPart1 h2 {
 	font-style: italic;
+	text-align: center;
 }
 
 .serviceItemPart1 {
-	display: none;
+	display: grid;
+	grid-column: 1;
+	grid-row: 1;
+	justify-self: center;
 }
 
 .serviceItemPart2 {
-	display: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10%;
 	color: white;
+	grid-column: 1;
+	grid-row: 1;
+	transition: .2s ease-in-out;
+	padding-left: 20rem;
+	padding-right: 7rem;
+	max-height: 0px;
 }
 
-.active {
+.serviceItemPart2.active {
+	/* display: flex; */
+	max-height: 800px;
+}
+
+.serviceItemSources {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+	opacity: 0;
+	transition: .3s ease-in-out;
+}
+
+.serviceItemSources img {
+	border-radius: 3rem;
+	position: relative;
+}
+
+.serviceItemSources img:nth-child(1) {
+	width: 30rem;
+	height: 30rem;
+}
+
+.serviceItemSources img:nth-child(2) {
+	width: 20rem;
+	height: 20rem;
+	margin-top: 5.4rem;
+}
+
+.serviceItemSources img:nth-child(3) {
+	width: 20rem;
+	height: 20rem;
+	margin-top: 5.4rem;
+	left: 33%;
+	justify-self: center;
+}
+
+.serviceItemOpacity {
+	transition-delay: .3s;
+	opacity: 1;
 }
 
 .projectWrapper {
-	margin-top: 28rem;
+	margin-top: 23rem;
+	margin-bottom: 10rem;
+}
+
+.projectHeading {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	flex-wrap: wrap;
 }
 
 .project {
 	display: flex;
-	margin-top: 15rem;
+	margin-top: 5rem;
+	/* margin-bottom: -35rem; */
 }
 
 
 .projectTitle {
 	font-size: 8rem;
-	text-align: center;
+	/* text-align: center; */
 }
 
 .projectColumn {
@@ -117,7 +199,7 @@
 }
 
 .projectChild {
-	border-radius: 50px;
+	border-radius: 30px;
 	overflow: hidden;
 	cursor: pointer;
 	margin-top: 5rem;
@@ -141,9 +223,7 @@
 }
 
 .projectsMore {
-	position: absolute;
-	bottom: 1rem;
-	right: 0;
+
 }
 
 .projectChildWebsite {
@@ -163,4 +243,114 @@
 .button {
 	margin-left: auto;
 	margin-top: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+	.servicesHeading {
+		flex-flow: column;
+	}
+
+	.servicesHeading p {
+		margin-top: 4rem;
+	}
+
+	.articleM {
+		margin-top: 15rem;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.serviceItem h2 {
+		font-size: 4rem;
+	}
+
+	.serviceItemPart2 {
+		padding-left: 5rem;
+		padding-right: 5rem;
+	}
+
+	.serviceItemPart2.active {
+		/* display: flex; */
+		max-height: 1000px;
+	}
+
+	.serviceItemSources img:nth-child(3) {
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.project {
+		flex-flow: column;
+		margin-bottom: -50rem;
+	}
+
+	.serviceItemPart2 {
+		display: flex;
+		flex-flow: column;
+	}
+
+	.projectColumn {
+		width: 100%;
+	}
+
+	.project .projectColumn:nth-child(1) {
+		margin-right: 0;
+	}
+
+	.project .projectColumn:nth-child(2) {
+		margin-left: 0;
+		margin-top: -8rem;
+	}
+
+	.serviceItemSources {
+		margin-top: 5rem;
+	}
+
+	.serviceItemSources img:nth-child(3) {
+		left: 0;
+	}
+
+	.serviceItemPart2.active {
+		/* display: flex; */
+		max-height: 1200px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header {
+		font-size: 6rem;
+	}
+
+	.introChild {
+		height: 50rem;
+	}
+
+	.wrapper {
+		padding-top: 22rem;
+	}
+
+	.articleM {
+		margin-top: 10rem;
+	}
+
+	.servicesWrapper {
+		width: 100vw;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+	}
+
+	.projectTitle {
+		font-size: 6rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.header {
+		font-size: 5rem;
+	}
+	.projectTitle {
+		font-size: 4rem;
+	}
 }

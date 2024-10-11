@@ -1,7 +1,7 @@
 .header {
 	transition: .2s ease-in-out;
 	width: 100%;
-	
+
 	z-index: 10;
 }
 
@@ -19,8 +19,8 @@
 	z-index: 9999;
 }
 
-.navigation.open .logo {
-	filter: invert(1);
+.navigation.open .logo img {
+	/* filter: invert(1); */
 	transition: .3s ease-in-out;
 }
 
@@ -36,6 +36,18 @@
 
 .header nav ul {
 	flex: 33%;
+	position: relative;
+}
+
+.background {
+	background-color: #ECECEC;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	border-radius: 2rem;
+	top: 0;
+	transition: .3s ease-out;
 }
 
 .logo {
@@ -43,20 +55,29 @@
 	position: relative;
 	width: max-content;
 	transition: .1s ease-in-out;
+	height: 8rem;
+	width: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ececec;
+	border-radius: 2rem;
 }
 
 .logo img {
-	transition: .2s ease-in-out;
+	transition: filter .2s ease-in-out;
+	width: 65%;
 }
 
 .logoNeg {
-	filter: invert();
+	/* filter: invert(); */
 }
 
 .logo2 {
 	position: absolute;
-	right: -2px;
-	top: -8px;
+	right: 12px;
+	top: 12px;
+	width: 20% !important;
 }
 
 .header > div {
@@ -68,19 +89,33 @@
 .header .menu {
 	display: flex;
 	padding: 3rem 5rem;
-	background-color: #ECECEC;
-	border-radius: 200px;
 	justify-content: center;
+	position: relative;
 }
 
 .header ul li {
-	padding: 0 2rem;
+	/* padding: 0 2rem; */
 	transition: padding .5s ease-in-out;
 	width: max-content;
 }
 
+.navItem {
+	padding: 0 2rem;
+	display: flex;
+	min-width: 12.5rem;
+	justify-content: center;
+}
+
+.navItemWrapper {
+	display: flex;
+}
+
+.navItemWrapperDelay {
+	transition: .2s ease-in-out;
+	transition-delay: .1s;
+}
+
 .header ul li a div {
-	width: max-content;
 }
 
 .liDeactivate {
@@ -99,7 +134,19 @@
 	color: white;
 	margin-left: auto;
 	transition: .1s ease-in-out;
-	border-radius: 50px;
+	border-radius: 1rem;
+	display: flex;
+}
+
+.contactList img {
+	margin-left: -2rem;
+	object-fit: contain;
+	filter: invert(1);
+}
+
+.contact img {
+	margin-left: 1rem;
+	object-fit: contain;
 }
 
 .contactButton {
@@ -117,9 +164,6 @@
 .hamburger {
 	display: none;
 	position: relative;
-	width: 50px;
-	height: 40px;
-	position: relative;
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -129,6 +173,15 @@
 	-o-transition: .5s ease-in-out;
 	transition: .5s ease-in-out;
 	cursor: pointer;
+}
+
+.hamburger div {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 50px;
+	height: 27px;
+
 }
 
 .hamburger span {
@@ -173,7 +226,7 @@
 
 }
 
-.hamburger.open span:nth-child(1) {
+/* .hamburger.open span:nth-child(1) {
 	top: 0px;
 	opacity: 0;
 	background: white;
@@ -196,9 +249,16 @@
 }
 
 .hamburger.open span:nth-child(4) {
-	/* top: 0px; */
 	opacity: 0;
 	background: white;
+} */
+
+.hamburger.neg span {
+	background: white;
+}
+
+.hamburgerClose {
+	color: white;
 }
 
 .mobileNav.open {
@@ -216,8 +276,8 @@
 	height: 100vh;
 	z-index: 9998;
 	pointer-events: none;
-	transition: .3s ease-in-out;
-	color: white;
+	transition: .1s ease-in-out;
+	color: #676767;
 	display: flex;
 }
 
@@ -234,6 +294,7 @@
 	font-weight: 400;
 	width: 100%;
 	padding: 0;
+	opacity: 0;
 }
 
 .mobileNav ul li a {
@@ -244,16 +305,21 @@
 }
 
 .mobileNav ul li a.active {
-	background-color: #ECECEC;
+	/* background-color: #ECECEC; */
+	color: white;
+}
+
+.hamburgerClose {
+	font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
 	.mobileNav ul li a {
-		padding: 4vh 5rem;
-	}	
+		padding: 3rem 5rem;
+	}
 
 	.mobileNav ul li {
-		font-size: 12vw;
+		font-size: 10vw;
 	}
 }
 
@@ -269,10 +335,14 @@
 
 	.hamburger {
 		display: flex;
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 	}
 
 	.second{
 		 display: none;
+	}
+
+	.header .navigation {
+		height: 5rem;
 	}
 }

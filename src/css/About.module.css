@@ -1,0 +1,66 @@
+.aboutText {
+	color: white;
+}
+
+.aboutContainer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 34.5rem;
+	position: relative;
+}
+
+.aboutText {
+	/* flex: 0 0 60%; */
+	display: flex;
+	flex-flow: column;
+	position: fixed;
+	/* width: 40%; */
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.aboutText div {
+	width: 60%;
+}
+
+.aboutText h2 {
+	margin-bottom: 3rem;
+}
+
+.aboutImages {
+	flex: 0 0 35%;
+	display: flex;
+	flex-flow: column;
+	margin-left: auto;
+}
+
+.aboutImages img {
+	border-radius: 5rem;
+	margin-bottom: 4.5rem;
+}
+
+.aboutParagraph:not(:first-child) {
+	margin-top: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+	.aboutContainer {
+		margin-top: 20rem;
+		flex-flow: column;
+	}
+
+	.aboutText div {
+		width: 100%;
+	}
+
+	.aboutImages {
+		margin-left: 0;
+	}
+
+	.aboutText {
+		position: relative;
+		left: 0;
+		transform: translateX(0);
+		margin-bottom: 4rem;
+	}
+}

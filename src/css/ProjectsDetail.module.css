@@ -20,6 +20,10 @@
 	margin-bottom: 3rem;
 }
 
+.webLink {
+	margin-top: 2rem;
+	color: #a8a8a8;
+}
 
 .textImageImage {
 	margin-top: 4rem;
@@ -35,9 +39,9 @@
 
 .headingimage {
 	width: 100%;
-	height: 700px;
+	height: 500px;
 	object-fit: cover;
-	border-radius: 150px 0px 50px 0px;
+	border-radius: 100px 0px 50px 0px;
 }
 
 .headingimageWrapper {
@@ -77,14 +81,14 @@
 	.headingimage {
 		border-radius: 300px 50px 50px 0px;
 	}
-	
+
 	.textImage {
 		margin-top: 20rem;
 		display: flex;
 		flex-flow: row;
 		justify-content: space-between;
 	}
-	
+
 	.textImageCopy {
 		padding-right: 7rem;
 		margin-top: 10rem;
@@ -94,20 +98,25 @@
 	.textImageCopy h2 {
 		margin-bottom: 0rem;
 	}
-	
+
 	.textImageP {
 		margin-top: 5rem;
 	}
-	
-	.textImageImage {
+
+	/* .textImageImage {
 		width: 45%;
-		height: 60rem;
+		height: 50rem;
 	}
-	
+
+	.textImageImageWrapper {
+		width: 45%;
+		height: 50rem;
+	} */
+
 	.textImageMirror {
 		flex-direction: row-reverse;
 	}
-	
+
 	.textImageMirror .textImageCopy {
 		padding-right: 0;
 		padding-left: 7rem;
@@ -117,6 +126,7 @@
 		margin-top: 9rem;
 		position: relative;
 		height: 80rem;
+		transform: scale(1.05);
 	}
 
 	.slideshowWrapper {
@@ -125,10 +135,10 @@
 }
 
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
 	.textImageImage {
 		width: 45%;
-		height: 80rem;
+		height: 50rem;
 	}
 }
 

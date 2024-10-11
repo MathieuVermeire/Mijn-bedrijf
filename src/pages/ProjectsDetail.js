@@ -5,8 +5,8 @@ import Text from '../components/ProjectsDetailpage/Text';
 import TextImage from '../components/ProjectsDetailpage/TextImage';
 import Style from '../css/ProjectsDetail.module.css';
 import {useParams, useLocation} from "react-router-dom";
-import projects from "../components/content/projects";
-import ObjectRenderer from '../components/ObjectRenderer';
+import projects from "../components/jsonData/projects";
+import ObjectRenderer from '../components/services/ObjectRenderer';
 
 
 const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
@@ -15,7 +15,7 @@ const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onInSlideshow
         <div className={`${Style.wrapper}`}>
             <ObjectRenderer slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} data={projects} projectId={projectId} />
         </div>
-        // projects.map((item, index) => (    
+        // projects.map((item, index) => (
 
         //     (item.link === projectId) ?
         //         <div key={index} className={Style.wrapper}>
@@ -24,7 +24,7 @@ const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onInSlideshow
         //             </div>
         //             <HeadingImage image={item.content.headerImage} />
         //             <div className='container'>
-                        
+
         //             {item.content.textImageOne
         //                 ?
         //                 <TextImage title={item.content.textImageOne.title} copy={item.content.textImageOne.copy} image={item.content.textImageOne.image} mirror={item.content.textImageOne.mirror} />
