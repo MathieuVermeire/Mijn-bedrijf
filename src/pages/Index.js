@@ -119,7 +119,7 @@ const Home = () => {
 			<h1 className={`text-center titleAnimation ${Style.header}`}><strong>Mathieu Vermeire's</strong> <br/> portfolio website</h1>
 			<img className={Style.down} src={down} alt='' />
 			<motion.article className={Style.article}>
-				<div className={Style.intro} onMouseEnter={e => handleMouseEnter(e)}>
+				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
 					<video muted loop className={`video`} ref={videoRef}>
 					<source src={video} type="video/mp4"/>
