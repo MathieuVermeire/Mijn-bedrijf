@@ -17,7 +17,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Home = ({ onInSlideshow }) => {
+const Home = () => {
 
 	let introRef = useRef(null);
 	let videoRef = useRef();
@@ -114,21 +114,12 @@ const Home = ({ onInSlideshow }) => {
 		offset: ['start end', 'end start'],
 	});
 
-	const handleMouseEnter = (e) => {
-		onInSlideshow(true);
-		console.log('works')
-	}
-
-	const handleMouseLeave = (e) => {
-		onInSlideshow(false);
-	}
-
 	return (
 		<div className={`container ${Style.wrapper}`}>
 			<h1 className={`text-center titleAnimation ${Style.header}`}><strong>Mathieu Vermeire's</strong> <br/> portfolio website</h1>
 			<img className={Style.down} src={down} alt='' />
 			<motion.article className={Style.article}>
-				<div className={Style.intro} onMouseEnter={e => handleMouseEnter(e)} onMouseLeave={e => handleMouseLeave(e)}>
+				<div className={Style.intro} onMouseEnter={e => handleMouseEnter(e)}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
 					<video muted loop className={`video`} ref={videoRef}>
 					<source src={video} type="video/mp4"/>
