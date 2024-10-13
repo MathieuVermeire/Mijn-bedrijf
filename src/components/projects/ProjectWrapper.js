@@ -46,14 +46,14 @@ const ProjectWrapper = () => {
 			tlprojects.to('.gsap-project-column1', {
 				y: 0,
 				opacity: 1,
-				duration: .8,
+				duration: 1.2,
 				ease: 'sine.inOut',
 			}, 0)
 
 			tlprojects.to('.gsap-project-column2', {
 				y: 0,
 				opacity: 1,
-				duration: .8,
+				duration: 1.2,
 				ease: 'sine.inOut',
 			}, 0)
 

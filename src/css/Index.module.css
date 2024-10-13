@@ -26,13 +26,23 @@
 	display: flex;
 }
 
+.introChild video {
+	display: flex;
+	/* width: 100%;
+	height: 100%;
+	object-fit: cover; */
+	border-radius: 50px;
+
+}
+
 .introChild {
 	display: flex;
+	align-items: center;
 	overflow: hidden;
-	border-radius: 50px;
 	width: 100%;
-	height: 600px;
-	transform: scale(.95);
+	height: max-content;
+	transform: scale(.9);
+	transform-origin: top;
 }
 
 .introChild img {
@@ -323,7 +333,7 @@
 	}
 
 	.introChild {
-		height: 50rem;
+		/* height: 50rem; */
 	}
 
 	.wrapper {

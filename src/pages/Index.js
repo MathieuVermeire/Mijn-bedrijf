@@ -1,5 +1,6 @@
 import Style from '../css/Index.module.css';
 import matheyoThumbnail from '../assets/img/projecten/matheyo/matheyo.png';
+import video from '../assets/img/showcase.mp4';
 import introImage from '../assets/img/intro.png';
 import down from '../assets/img/icons/icon-down.svg';
 import { useEffect, useRef, useState } from 'react';
@@ -19,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
 
 	let introRef = useRef(null);
+	let videoRef = useRef();
 
 	useEffect(() => {
 		// const $card = document.querySelector('#card');
@@ -70,24 +72,24 @@ const Home = () => {
 			}
 
 		});
-
+		console.log(videoRef.current);
+		// videoRef.current.play();
 		const styles = window.getComputedStyle(document.querySelector('.gsap-intro'));
 
 		console.log(styles.height * 1.5);
 
-		tl.to('.gsap-intro', {
+		tl.to('.gsap-intro video', {
 			borderRadius: '70px',
-			height: `${parseInt(styles.height) * 1.3}`,
 			duration: .89,
-			ease: 'power3.inOut',
+			ease: 'circ.inOut',
 		},0);
 
 		tl.to('.gsap-intro',
 		{
 			scale: 1,
-			duration: .5,
+			duration: 1,
 			delay: .3,
-			ease: 'power3.Out',
+			ease: 'circ.Out',
 			onComplete:() => {
 				ScrollTrigger.refresh();
 			}
@@ -109,7 +111,11 @@ const Home = () => {
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
-						<img className='' src={introImage} />
+					<video autoPlay muted loop ref={videoRef}>
+					<source src={video} type="video/mp4"/>
+					</video>
+						{/* <img className='' src={introImage} /> */}
+						{/* <iframe src="https://player.vimeo.com/video/1019122669?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="showcase"></iframe><script src="https://player.vimeo.com/api/player.js"></script> */}
 					</div>
 				</div>
 				<button className={`button ${Style.button}`}>Meer projecten</button>
