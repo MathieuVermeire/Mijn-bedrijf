@@ -27,7 +27,6 @@ function App() {
 	const boxRef = useRef();
 
 
-	// console.log(q());
 	const [mouseState, setMouseState] = useState({
 		xMain: 0,
 		yMain: 0,
@@ -53,14 +52,11 @@ function App() {
 
 	}
 
-	// console.log(localStorage.getItem("MyCat"));
-
 	useEffect(() => {
 		const tl = gsap.timeline();
 
 
 		// q.forEach(element => {
-		// 	console.log(element)
 		// });
 
 
@@ -108,7 +104,7 @@ function App() {
 	},[loading])
 
 	const handleAppScroll = (e) => {
-		console.log(e);
+		// console.log(e);
 	}
 
 		return (

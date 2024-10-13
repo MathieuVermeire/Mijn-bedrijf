@@ -74,11 +74,10 @@ const Home = () => {
 			}
 
 		});
-		console.log(location);
 		// videoRef.current.play();
 		const styles = window.getComputedStyle(document.querySelector('.gsap-intro'));
 
-		console.log(styles.height * 1.5);
+		// console.log(styles.height * 1.5);
 
 		tl.to('.gsap-intro video', {
 			borderRadius: '70px',

@@ -9,7 +9,6 @@ const Gsap = ({ loading, boxRef }) => {
 	const location = useLocation();
 
 	useLocationChange((location) => {
-		console.log('handle route change here', location)
 	})
 
 	const q = gsap.utils.selector(boxRef);

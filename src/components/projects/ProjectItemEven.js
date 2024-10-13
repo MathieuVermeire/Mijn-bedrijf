@@ -62,7 +62,6 @@ const ProjectItemEven = forwardRef((props, ref) => {
 	const tl = gsap.timeline();
 
 	const handleMouseEnter = (e) => {
-		console.log('enter')
 
 		if (e.currentTarget) {
 			q(e.currentTarget).forEach((item) => {
@@ -107,7 +106,6 @@ const ProjectItemEven = forwardRef((props, ref) => {
 	}
 
 	const handleMouseLeave = (e) => {
-		console.log('leave');
 
 		if (e.currentTarget) {
 			tl.to('.projectChild', {

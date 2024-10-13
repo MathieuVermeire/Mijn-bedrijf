@@ -10,7 +10,6 @@ const HandleScroll = () => {
 		let isScrolling;
 		const styles = window.getComputedStyle(document.querySelector('.generalRadius'));
     const borderRadius = styles.borderRadius;
-		console.log(borderRadius);
 		const tl = gsap.timeline({ paused:true });
 		gsap.to('.generalRadius', {
 			borderRadius: '70px',

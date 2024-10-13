@@ -15,8 +15,6 @@ const Projects = () => {
 
 	const handleServiceItemState = (newState) => {
     setServiceItemState(newState);
-
-		console.log(serviceItemState)
   };
 
 	const hoverVariants = {

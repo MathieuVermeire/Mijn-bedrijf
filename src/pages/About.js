@@ -32,7 +32,6 @@ const About = () => {
 				// markers: true,
 			}
 		});
-		console.log('useEffect');
 
 		tl.to('#textRef', {
 			opacity: 0,
