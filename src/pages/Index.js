@@ -10,17 +10,19 @@ import gsap from 'gsap';
 import ServiceItemsList from '../components/jsonData/ServiceItemsList'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ServiceItems from '../components/services/ServiceItems';
-import { Link } from 'react-router-dom';
 import projects from '../components/jsonData/projects';
 import Services from '../components/services/Services';
 import Project from '../components/projects/ProjectWrapper';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Home = () => {
+const Home = ({ onInSlideshow }) => {
 
 	let introRef = useRef(null);
 	let videoRef = useRef();
+
+	const location = useLocation();
 
 	useEffect(() => {
 		// const $card = document.querySelector('#card');
@@ -72,7 +74,7 @@ const Home = () => {
 			}
 
 		});
-		console.log(videoRef.current);
+		console.log(location);
 		// videoRef.current.play();
 		const styles = window.getComputedStyle(document.querySelector('.gsap-intro'));
 
@@ -82,6 +84,7 @@ const Home = () => {
 			borderRadius: '70px',
 			duration: .89,
 			ease: 'circ.inOut',
+
 		},0);
 
 		tl.to('.gsap-intro',
@@ -92,11 +95,18 @@ const Home = () => {
 			ease: 'circ.Out',
 			onComplete:() => {
 				ScrollTrigger.refresh();
+				if(location.pathname === '/') {
+					document.querySelector('.video').play();
+				} else {
+					return
+				}
+					// console.log('start')
+
 			}
 		},0);
 
 
-	}, [])
+	}, [location])
 
 
 	const intro = useScroll({
@@ -104,14 +114,23 @@ const Home = () => {
 		offset: ['start end', 'end start'],
 	});
 
+	const handleMouseEnter = (e) => {
+		onInSlideshow(true);
+		console.log('works')
+	}
+
+	const handleMouseLeave = (e) => {
+		onInSlideshow(false);
+	}
+
 	return (
 		<div className={`container ${Style.wrapper}`}>
 			<h1 className={`text-center titleAnimation ${Style.header}`}><strong>Mathieu Vermeire's</strong> <br/> portfolio website</h1>
 			<img className={Style.down} src={down} alt='' />
 			<motion.article className={Style.article}>
-				<div className={Style.intro}>
+				<div className={Style.intro} onMouseEnter={e => handleMouseEnter(e)} onMouseLeave={e => handleMouseLeave(e)}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
-					<video autoPlay muted loop ref={videoRef}>
+					<video muted loop className={`video`} ref={videoRef}>
 					<source src={video} type="video/mp4"/>
 					</video>
 						{/* <img className='' src={introImage} /> */}

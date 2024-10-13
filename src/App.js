@@ -117,7 +117,7 @@ function App() {
 				?
 				(
 					<motion.div ref={boxRef} style={{ opacity: 0 }} className='app' onScroll={e => handleAppScroll(e)} onMouseMove={handleMouseMove}>
-						<div className={inSlideshow ? `cursor cursor-large` : `cursor`} style={{left: mouseState.xMain, top: mouseState.yMain}} ref={mouseRef}>
+						<div className={inSlideshow ? `cursor-large cursor` : `cursor`} style={{left: mouseState.xMain, top: mouseState.yMain}} ref={mouseRef}>
 							<div style={inSlideshow ? {opacity: `1`} :  {opacity: 0}} className='cursor-in'>{inSlideshow ? slideshowTrack : ''}</div>
 						</div>
 						<BrowserRouter>
