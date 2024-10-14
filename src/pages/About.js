@@ -1,6 +1,6 @@
 import Style from '../css/About.module.css';
 import bossen from '../assets/img/about/bossen.png'
-import mugshot from '../assets/img/about/mugshot.jpg'
+import mugshot from '../assets/img/about/mugshot2.jpg'
 import tennis from '../assets/img/about/tennis.png'
 import { useScroll, useTransform, motion, delay } from "framer-motion"
 import { useEffect, useRef } from 'react';

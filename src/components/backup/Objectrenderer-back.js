@@ -4,7 +4,7 @@ import Slideshow from './ProjectsDetailpage/Slideshow';
 import HeadingImage from './ProjectsDetailpage/HeadingImage';
 import TextImage from './ProjectsDetailpage/TextImage';
 
-const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
+const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onOpenCursor }) => {
 
   let pageItem;
   // const pageItem = data.map((item, i) => {
@@ -38,7 +38,7 @@ const ObjectRenderer = ({ data, projectId, slideshowTrack, onSlideshowTrack, onI
                   {key == 'slideshow'
                   ?
                   // <div>{pageItem.content.slideshow.images}</div>
-                  <Slideshow copy={pageItem.content.slideshow.copy} images={pageItem.content.slideshow.images} slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} />
+                  <Slideshow copy={pageItem.content.slideshow.copy} images={pageItem.content.slideshow.images} slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onOpenCursor={onOpenCursor} />
                   :
                   ''
                   }

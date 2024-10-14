@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { useScroll, useTransform, motion, delay } from "framer-motion"
 
 
-const Header = ({ animation }) => {
+const Header = ({ animation, onOpenCursor }) => {
 
 	const scroll = useScroll();
 	const [position, setPosition] = useState(window.scrollY)
@@ -172,6 +172,14 @@ const Header = ({ animation }) => {
 		enter: { scaleX: 1 },
 	}
 
+	const handleMouseInContact = (e) => {
+		onOpenCursor(true);
+	}
+
+	const handleMouseLeaveContact = (e) => {
+		onOpenCursor(false);
+	}
+
 	return (
 		<header className={`${Style.header}`}>
 			<nav className={headerOpen === true ? `container ${Style.navigation} ${Style.open}` : `container ${Style.navigation}`}>
@@ -206,7 +214,7 @@ const Header = ({ animation }) => {
 						 	className={Style.background}></motion.div>
 					</ul>
 					<div className={Style.second}>
-						 <NavLink className={`${Style.contact} ${cls}`} to='/contact'>Contact<img src={arrow} alt='arrow' /></NavLink>
+						 <NavLink onMouseEnter={e => handleMouseInContact(e)} onMouseLeave={e => handleMouseLeaveContact(e)} className={`${Style.contact} ${cls}`} to='/contact'>Contact<img src={arrow} alt='arrow' /></NavLink>
 					</div>
 					{
 						headerOpen !== true

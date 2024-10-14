@@ -9,11 +9,11 @@ import projects from "../components/jsonData/projects";
 import ObjectRenderer from '../components/services/ObjectRenderer';
 
 
-const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
+const ProjectsDetail = ({ props, slideshowTrack, onSlideshowTrack, onOpenCursor }) => {
     const {projectId} = useParams()
     return (
         <div className={`${Style.wrapper}`}>
-            <ObjectRenderer slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onInSlideshow={onInSlideshow} data={projects} projectId={projectId} />
+            <ObjectRenderer slideshowTrack={slideshowTrack} onSlideshowTrack={onSlideshowTrack} onOpenCursor={onOpenCursor} data={projects} projectId={projectId} />
         </div>
         // projects.map((item, index) => (
 

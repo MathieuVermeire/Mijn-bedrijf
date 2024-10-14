@@ -18,7 +18,7 @@ const SlideshowContext = createContext();
 // buttons for sliding through the slideshow
 //
 
-const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlideshow }) => {
+const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onOpenCursor }) => {
 	const [context, setContext] = useState(images);
 	const timer = useRef(null);
 
@@ -90,11 +90,12 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 	}
 
 	const handleSlideshowMouseEnter = e => {
-		onInSlideshow(true);
+		onOpenCursor(true);
 	}
 
 	const handleSlideshowMouseLeave = e => {
-		onInSlideshow(false);
+		onOpenCursor(false);
+		onSlideshowTrack(null)
 	}
 
 	const handleSlideshowMouseMove = e => {

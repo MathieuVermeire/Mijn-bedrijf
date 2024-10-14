@@ -268,13 +268,19 @@ img {
 
 .head-hidden {
 	opacity: 0;
+	pointer-events: none;
 }
 
 .cursor {
     position: fixed;
     transform: translateX(-50%) translateY(-50%);
     pointer-events:none;
-	z-index: 9997;
+		z-index: 10000;
+		mix-blend-mode: exclusion;
+}
+
+.cursor-noblend {
+	mix-blend-mode: normal;
 }
 
 .cursor-in {

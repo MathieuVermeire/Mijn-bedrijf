@@ -28,7 +28,8 @@ function App() {
 
 	const [loading, setLoading] = useState(true);
 	const [headerLogo, setHeaderLogo] = useState(false);
-	const [inSlideshow, setInSlideshow] = useState(null);
+	const [openCursor, setOpenCursor] = useState(null);
+	const [openCursorAlt, setOpenCursorAlt] = useState(null);
 	const [slideshowTrack, setSlideshowTrack] = useState(null);
 
 	const [mouseState, setMouseState] = useState({
@@ -112,19 +113,19 @@ function App() {
 				?
 				(
 					<motion.div ref={boxRef} style={{ opacity: 0 }} className='app' onScroll={e => handleAppScroll(e)} onMouseMove={handleMouseMove}>
-						<div className={inSlideshow ? `cursor-large cursor` : `cursor`} style={{left: mouseState.xMain, top: mouseState.yMain}} ref={mouseRef}>
-							<div style={inSlideshow ? {opacity: `1`} :  {opacity: 0}} className='cursor-in'>{inSlideshow ? slideshowTrack : ''}</div>
-						</div>
+							<div className={openCursor ? (slideshowTrack !== null  ? `cursor-large cursor cursor-noblend` : `cursor-large cursor`) : `cursor`} style={{left: mouseState.xMain, top: mouseState.yMain}} ref={mouseRef}>
+								<div style={openCursor ? {opacity: `1`} :  {opacity: 0}} className='cursor-in'>{slideshowTrack !== null ? slideshowTrack : ''}</div>
+							</div>
 						<BrowserRouter>
 							<Gsap loading={loading} boxRef={boxRef}/>
 							{/* <HandleScroll /> */}
 							<ScrollToTop />
-							<Header animation={headerLogo}/>
+							<Header animation={headerLogo} onOpenCursor={setOpenCursor}/>
 							<Routes>
 								<Route path='/' element={<Index/>}></Route>
 								<Route path='/over-mij' element={<About/>}></Route>
 								<Route path='/projecten' element={<Projects/>}></Route>
-								<Route path='/projecten/:projectId' element={<ProjectsDetail slideshowTrack={slideshowTrack} onSlideshowTrack={setSlideshowTrack} onInSlideshow={setInSlideshow}/>}></Route>
+								<Route path='/projecten/:projectId' element={<ProjectsDetail slideshowTrack={slideshowTrack} onSlideshowTrack={setSlideshowTrack} onOpenCursor={setOpenCursor}/>}></Route>
 								<Route path='/contact' element={<Contact/>}></Route>
 							</Routes>
 							<Footer />
