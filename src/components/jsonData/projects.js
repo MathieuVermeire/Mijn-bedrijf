@@ -42,6 +42,14 @@ import devinetakeover2Curriculum from '../../assets/img/projecten/devinetakeover
 import devinetakeover2Studentwork from '../../assets/img/projecten/devinetakeover2/devinetakeover2-studentwork.png';
 import devinetakeover2Alumni from '../../assets/img/projecten/devinetakeover2/devinetakeover2-alumni.png';
 
+
+import stonesandlandscapesThumbnail from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-thumbnail.png';
+import stonesandlandscapesScheibeekhoeve from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-scheibeekhoeve.png';
+import stonesandlandscapesKarthuis from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-gastenkwartier-kartuis.png';
+import stonesandlandscapesBoesmolen from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-boesmolen.png';
+import stonesandlandscapesRivierbegeleidend from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-rivierbegeleidend.png';
+import stonesandlandscapesStommekapelsteen from '../../assets/img/projecten/stonesandlandscapes/stonesandlandscapes-stommekapel-steen.png';
+
 const projects = [
 	{
 		thumbnail: duurzaamwonenThumbnail,
@@ -68,6 +76,27 @@ const projects = [
 				mirror: true,
 			},
 		}
+	},
+	{
+		thumbnail: stonesandlandscapesThumbnail,
+		link: 'stonesandlandscapes',
+		content: {
+			title: 'Stones and landscapes',
+			description: 'Met Stones And Landscapes biedt Tine consultancy en diensten, waaraan reële nood is bij eigenaars en beheerders van onroerend en roerend erfgoed. Deze bijzondere combinatie van diensten draagt bij tot een duurzaam resultaat.',
+			headerImage: stonesandlandscapesScheibeekhoeve,
+			// copyOne:'lorem ipsum dolor sit amt, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+			textImageOne: {
+				title: 'Roerend/onroerend erfgoed',
+				copy: 'Tine Vermeire biedt consultancies aan voor meerdere doelgroepen. Bijvoorbeeld een Particulier eigenaar, gemeente of landschaps architect om er een aantal te noemen. Tine gaat dan te werk om het onroerend erfgoed, verzameling archieven of landscappen de juiste erkenning te geven waarnaar de klant opzoek is.',
+				image: stonesandlandscapesKarthuis,
+				mirror: false,
+			},
+			// copyOne:'lorem ipsum dolor sit amt, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+			slideshow: {
+				copy:'Ontdek Stones and landscapes',
+				images: [stonesandlandscapesBoesmolen, stonesandlandscapesRivierbegeleidend, stonesandlandscapesStommekapelsteen],
+			},
+		},
 	},
 	{
 		thumbnail: matheyoThumbnail,

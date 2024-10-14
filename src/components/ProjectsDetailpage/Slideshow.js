@@ -26,7 +26,7 @@ const Slideshow = ({ copy, images, slideshowTrack, onSlideshowTrack, onInSlidesh
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.slideshowGrabber',
-				toggleActions: 'play reverse play reverse',
+				toggleActions: 'play play play reverse',
 				start: 'top 50%',
 				end:'bottom 50%',
 				// markers: true,
