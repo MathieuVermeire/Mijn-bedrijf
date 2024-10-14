@@ -27,7 +27,6 @@ const Home = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		console.log(activeVideo);
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.gsap-intro',
@@ -36,17 +35,11 @@ const Home = () => {
 				// markers: true,
 				onEnterBack: () => {
 					setActiveVideo(true);
-					if(activeVideo && location.pathname === '/') {
-					} else {
-						return
-					}
+
 				},
 				onLeave: () => {
 					setActiveVideo(false);
-					if(location.pathname === '/') {
-					} else {
-						return
-					}
+
 				}
 			}
 
