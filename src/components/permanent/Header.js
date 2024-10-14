@@ -97,7 +97,7 @@ const Header = ({ animation }) => {
 		useEffect(()=> {
 			const tl = gsap.timeline();
 
-			if(animation === true && localStorage.getItem("MyCat") !== "Tom") {
+			if(animation === true && sessionStorage.getItem("MyCat") !== "Tom") {
 				tl.fromTo('#logo1',
 					{
 						y: -30,
@@ -110,7 +110,7 @@ const Header = ({ animation }) => {
 						duration: .7,
 						ease: 'power4.Out',
 						onComplete: () => {
-							localStorage.setItem("MyCat", "Tom");
+							sessionStorage.setItem("MyCat", "Tom");
 						},
 					}, 0);
 
@@ -177,8 +177,8 @@ const Header = ({ animation }) => {
 			<nav className={headerOpen === true ? `container ${Style.navigation} ${Style.open}` : `container ${Style.navigation}`}>
 					<div className={Style.first}>
 						<NavLink className={`${Style.logo} ${cls}`} to='/'>
-							<img style={animation && localStorage.getItem("MyCat") !== "Tom" ? {opacity: 0} : null} id='logo1' className={location.pathname == '/contact' || location.pathname == '/over-mij' ? `${Style.logoNeg}` : ``} src={logo} alt='logo' />
-							<img style={animation && localStorage.getItem("MyCat") !== "Tom" ? {opacity: 0} : null} id='logo2' className={location.pathname == '/contact' || location.pathname == '/over-mij' ? `${Style.logoNeg} ${Style.logo2}` : `${Style.logo2}`} src={logo2} alt='logo2' />
+							<img style={animation && sessionStorage.getItem("MyCat") !== "Tom" ? {opacity: 0} : null} id='logo1' className={location.pathname == '/contact' || location.pathname == '/over-mij' ? `${Style.logoNeg}` : ``} src={logo} alt='logo' />
+							<img style={animation && sessionStorage.getItem("MyCat") !== "Tom" ? {opacity: 0} : null} id='logo2' className={location.pathname == '/contact' || location.pathname == '/over-mij' ? `${Style.logoNeg} ${Style.logo2}` : `${Style.logo2}`} src={logo2} alt='logo2' />
 						</NavLink>
 					</div>
 					<ul className={Style.menu}>
@@ -201,7 +201,7 @@ const Header = ({ animation }) => {
 							}><div className={Style.navItem}>Contact</div><img src={arrow} alt='arrow' /></motion.div></NavLink></motion.li>
 						<motion.div
 							style={
-								scrollPosition >= 50 || location.pathname !== '/' ? { width: '100%', borderRadius: '2rem', } : { width: '50%', borderRadius: '2rem', }
+								scrollPosition >= 50 || location.pathname !== '/' ? { width: '100%', } : { width: '50%', }
 							}
 						 	className={Style.background}></motion.div>
 					</ul>

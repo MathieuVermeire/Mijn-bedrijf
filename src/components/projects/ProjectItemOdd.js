@@ -3,12 +3,16 @@ import Style from '../../css/Projects.module.css';
 import { motion, useTransform, useMotionValue, useScroll } from 'framer-motion';
 import arrow from '../../assets/img/icons/contact-arrow.svg';
 
-import { Link } from 'react-router-dom';
-import { forwardRef, useEffect, useRef } from "react";
+import { Link, useLocation } from 'react-router-dom';
+import { forwardRef, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 
 const ProjectItemOdd = forwardRef((props, ref) => {
+
+	const location = useLocation();
+	const [filteredProjects, setFilteredProjects] = useState(projects);
+
 
 	let column1 = useRef(null);
 	let column2 = useRef(null);
@@ -23,6 +27,11 @@ const ProjectItemOdd = forwardRef((props, ref) => {
 	const q = gsap.utils.selector(boxRef);
 
 	useEffect(() => {
+		if(location.pathname === '/') {
+			// let tmp = [...projects];
+			setFilteredProjects([...projects].slice(0, 4))
+		}
+
 		q('.projectChild').forEach((item) => {
 			// console.log(item);
 			const Etl = gsap.timeline({
@@ -43,7 +52,7 @@ const ProjectItemOdd = forwardRef((props, ref) => {
 	}, [])
 
 
-		const tl = gsap.timeline();
+	const tl = gsap.timeline();
 
 	const handleMouseEnter = (e) => {
 		// console.log('enter')
@@ -134,7 +143,7 @@ const ProjectItemOdd = forwardRef((props, ref) => {
 
 	return (
 		<>
-			{projects.map((item, index) => (
+			{filteredProjects.map((item, index) => (
 				(index % 2 === 1)
 					?
 					<Link key={index} className={Style.projectChildLink}

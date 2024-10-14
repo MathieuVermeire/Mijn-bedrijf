@@ -50,7 +50,7 @@ const Gsap = ({ loading, boxRef }) => {
 			// 	}
 			// }, 0)
 
-			if(localStorage.getItem("MyCat") === "Tom") {
+			if(sessionStorage.getItem("MyCat") === "Tom") {
 				q(".textAnimation").forEach((text) => {
 					const tlScroll = gsap.timeline({
 						scrollTrigger: {

@@ -45,7 +45,7 @@
 	height: 100%;
 	position: absolute;
 	z-index: -1;
-	border-radius: 2rem;
+	border-radius: 1.5rem;
 	top: 0;
 	transition: .3s ease-out;
 }
@@ -61,7 +61,7 @@
 	justify-content: center;
 	align-items: center;
 	background: #ececec;
-	border-radius: 2rem;
+	border-radius: 1.5rem;
 }
 
 .logo img {

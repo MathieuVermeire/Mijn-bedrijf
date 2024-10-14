@@ -26,6 +26,10 @@ function App() {
 	let mouseRef = useRef(null);
 	const boxRef = useRef();
 
+	const [loading, setLoading] = useState(true);
+	const [headerLogo, setHeaderLogo] = useState(false);
+	const [inSlideshow, setInSlideshow] = useState(null);
+	const [slideshowTrack, setSlideshowTrack] = useState(null);
 
 	const [mouseState, setMouseState] = useState({
 		xMain: 0,
@@ -33,11 +37,6 @@ function App() {
 		xTrailing: 0,
 		yTrailing: 0,
 	});
-
-	const [loading, setLoading] = useState(true);
-	const [headerLogo, setHeaderLogo] = useState(false);
-	const [inSlideshow, setInSlideshow] = useState(null);
-	const [slideshowTrack, setSlideshowTrack] = useState(null);
 
 	const handleMouseMove = e => {
 		const {clientX, clientY} = e;
@@ -60,7 +59,7 @@ function App() {
 		// });
 
 
-		if(localStorage.getItem("MyCat") !== 'Tom') {
+		if(sessionStorage.getItem("MyCat") !== 'Tom') {
 			tl.to('.loadingWrapper', {
 				top: '50%',
 				duration: .9,
@@ -94,7 +93,7 @@ function App() {
 			}, 1)
 		}
 
-		if(loading === false || localStorage.getItem("MyCat") === 'Tom' ) {
+		if(loading === false || sessionStorage.getItem("MyCat") === 'Tom' ) {
 			gsap.to('.app',{
 				opacity: 1,
 				duration: 1,
@@ -109,7 +108,7 @@ function App() {
 
 		return (
 			<div>
-				{ loading === false || localStorage.getItem("MyCat") === 'Tom'
+				{ loading === false || sessionStorage.getItem("MyCat") === 'Tom'
 				?
 				(
 					<motion.div ref={boxRef} style={{ opacity: 0 }} className='app' onScroll={e => handleAppScroll(e)} onMouseMove={handleMouseMove}>
@@ -136,7 +135,7 @@ function App() {
 					null
 				}
 					{
-				 	loading === true && localStorage.getItem("MyCat") !== 'Tom'
+				 	loading === true && sessionStorage.getItem("MyCat") !== 'Tom'
 				 	?
 				 	(
 				 		<div className='loading'>

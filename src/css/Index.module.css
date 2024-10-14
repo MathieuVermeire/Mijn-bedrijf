@@ -32,7 +32,6 @@
 	height: 100%;
 	object-fit: cover; */
 	border-radius: 50px;
-
 }
 
 .introChild {
@@ -43,6 +42,8 @@
 	height: max-content;
 	transform: scale(.9);
 	transform-origin: top;
+	filter: drop-shadow(0rem 0rem 0.75rem rgba(0, 0, 0, 0.03));
+
 }
 
 .introChild img {

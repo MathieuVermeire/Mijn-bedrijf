@@ -2,8 +2,8 @@ import projects from "../jsonData/projects";
 import Style from '../../css/Projects.module.css';
 import { motion, useTransform, useMotionValue, useScroll } from 'framer-motion';
 import arrow from '../../assets/img/icons/contact-arrow.svg';
-import { Link } from 'react-router-dom';
-import React, { forwardRef, useEffect, useRef } from "react";
+import { Link, useLocation } from 'react-router-dom';
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -11,7 +11,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectItemEven = forwardRef((props, ref) => {
-
+	const [filteredProjects, setFilteredProjects] = useState(projects);
+	const location = useLocation();
 	// let tempRef = useRef(null);
 
 	// let boxRef = useRef(null);
@@ -40,6 +41,10 @@ const ProjectItemEven = forwardRef((props, ref) => {
 	const q = gsap.utils.selector(boxRef);
 
 	useEffect(() => {
+		if(location.pathname === '/') {
+			// let tmp = [...projects];
+			setFilteredProjects([...projects].slice(0, 4))
+		}
 		q('.projectChild').forEach((item) => {
 			// console.log(item);
 			const Etl = gsap.timeline({
@@ -147,7 +152,7 @@ const ProjectItemEven = forwardRef((props, ref) => {
 
 	return (
 		<>
-			{projects.map((item, index) => (
+			{filteredProjects.map((item, index) => (
 							(index % 2 === 0)
 								?
 								<Link key={index} className={Style.projectChildLink}

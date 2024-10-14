@@ -22,55 +22,32 @@ const Home = () => {
 	let introRef = useRef(null);
 	let videoRef = useRef();
 
+	const [activeVideo, setActiveVideo] = useState(false);
+
 	const location = useLocation();
 
 	useEffect(() => {
-		// const $card = document.querySelector('#card');
-		// let bounds;
-
-		// // document.addEventListener('mousemove', rotateToMouse);
-
-		// function rotateToMouse(e) {
-		// const mouseX = e.clientX;
-		// const mouseY = e.clientY;
-		// const leftX = mouseX - bounds.x;
-		// const topY = mouseY - bounds.y;
-		// const center = {
-		// 	x: leftX - bounds.width / 2,
-		// 	y: topY - bounds.height / 2
-		// }
-		// const distance = Math.sqrt(center.x**2 + center.y**2);
-
-		// $card.style.transform = `
-		// 	scale3d(1.07, 1.07, 1.07)
-		// 	rotate3d(
-		// 	${center.y / 100},
-		// 	${-center.x / 100},
-		// 	0,
-		// 	${Math.log(distance)* 2}deg
-		// 	)
-		// `;
-
-		// $card.querySelector('.glow').style.backgroundImage = `
-		// 	radial-gradient(
-		// 	circle at
-		// 	${center.x * 2 + bounds.width/2}px
-		// 	${center.y * 2 + bounds.height/2}px,
-		// 	#ffffff55,
-		// 	#0000000f
-		// 	)
-		// `;
-		// }
-	}, [])
-
-
-	useEffect(() => {
+		console.log(activeVideo);
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.gsap-intro',
 				toggleActions: 'play none none none',
 				start: 'top center',
 				// markers: true,
+				onEnterBack: () => {
+					setActiveVideo(true);
+					if(activeVideo && location.pathname === '/') {
+					} else {
+						return
+					}
+				},
+				onLeave: () => {
+					setActiveVideo(false);
+					if(location.pathname === '/') {
+					} else {
+						return
+					}
+				}
 			}
 
 		});
@@ -94,8 +71,8 @@ const Home = () => {
 			ease: 'circ.Out',
 			onComplete:() => {
 				ScrollTrigger.refresh();
+				setActiveVideo(true);
 				if(location.pathname === '/') {
-					document.querySelector('.video').play();
 				} else {
 					return
 				}
@@ -105,7 +82,13 @@ const Home = () => {
 		},0);
 
 
-	}, [location])
+		if(activeVideo === true) {
+			document.querySelector('.video').play();
+		} else {
+			document.querySelector('.video').pause();
+		}
+	}, [activeVideo])
+
 
 
 	const intro = useScroll({
@@ -120,7 +103,7 @@ const Home = () => {
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
-					<video muted loop className={`video`} ref={videoRef}>
+					<video preload="metadata" muted loop className={`video`} ref={videoRef}>
 					<source src={video} type="video/mp4"/>
 					</video>
 						{/* <img className='' src={introImage} /> */}
