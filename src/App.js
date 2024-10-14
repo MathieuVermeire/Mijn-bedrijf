@@ -122,7 +122,7 @@ function App() {
 							<ScrollToTop />
 							<Header animation={headerLogo} onOpenCursor={setOpenCursor}/>
 							<Routes>
-								<Route path='/' element={<Index/>}></Route>
+								<Route path='/' element={<Index onOpenCursor={setOpenCursor}/>}></Route>
 								<Route path='/over-mij' element={<About/>}></Route>
 								<Route path='/projecten' element={<Projects/>}></Route>
 								<Route path='/projecten/:projectId' element={<ProjectsDetail slideshowTrack={slideshowTrack} onSlideshowTrack={setSlideshowTrack} onOpenCursor={setOpenCursor}/>}></Route>

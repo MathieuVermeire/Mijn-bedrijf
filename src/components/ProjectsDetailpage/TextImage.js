@@ -41,7 +41,7 @@ const TextImage = ({ title, copy, webLink, image, mirror }) => {
                 <div className={`${Style.textImageCopy}`}>
                     <h2 className='titleAnimation'>{ title }</h2>
                     <p className={`textAnimation ${Style.textImageP}`}>{ copy }</p>
-										<a className={`${Style.webLink}`} target='_blank' href='https://www.matheyo.be'>{webLink}</a>
+										<a className={`${Style.webLink}`} target='_blank' href={`https://${webLink}`}>{webLink}</a>
                 </div>
                 <img className={`image-detail ${Style.textImageImage}`} src={ image } />
             </div>

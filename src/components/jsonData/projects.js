@@ -88,6 +88,7 @@ const projects = [
 			textImageOne: {
 				title: 'Roerend/onroerend erfgoed',
 				copy: 'Tine Vermeire biedt consultancies aan voor meerdere doelgroepen. Bijvoorbeeld een Particulier eigenaar, gemeente of landschaps architect om er een aantal te noemen. Tine gaat dan te werk om het onroerend erfgoed, verzameling archieven of landscappen de juiste erkenning te geven waarnaar de klant opzoek is.',
+				webLink: 'www.stonesandlandscapes.be/',
 				image: stonesandlandscapesKarthuis,
 				mirror: false,
 			},
@@ -126,26 +127,6 @@ const projects = [
 		},
 	},
 	{
-		thumbnail: devinetakeoverThumbnail,
-		link: 'devinetakeover',
-		content: {
-			title: 'Devine takeover',
-			description: 'Hoewel de huidige Devine-website zijn doel heeft gediend, is het tijd om vooruit te kijken. Devine is voortdurend in verandering. En dat zou ook voor onze website moeten gelden. Jij hebt volledige controle over de nieuwe homepage van de Devine-website.',
-			headerImage: devinetakeoverHeader,
-			textImageOne: {
-				title: 'Take it in',
-				copy: 'Met een aanpasbare header kan je de Devine website overnemen. Toekomstige studenten moeten ook hun takeover op de site plaatsen.',
-				image: devinetakeoverIntroHeader,
-				mirror: false,
-			},
-			// copyOne:'lorem ipsum dolor sit amt, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-			slideshow: {
-				copy:'Ontdek de visuals',
-				images: [devinetakeoverIntro, devinetakeoverDesign, devinetakeoverDevelopment, devinetakeoverResearch, devinetakeoverFuture],
-			},
-		},
-	},
-	{
 		thumbnail: bathroomstudiosThumbnail,
 		link: 'bathroomstudios',
 		content: {
@@ -176,6 +157,26 @@ const projects = [
 				copy: 'Ten slotte wordt er een QR-code naar hen gemaild die de gegevens bevat van de badkamer die ze zojuist hebben gecreëerd. Deze code kan worden gebruikt in de pop-upwinkel.',
 				image: bathroomstudiosTablet,
 				mirror: false,
+			},
+		},
+	},
+	{
+		thumbnail: devinetakeoverThumbnail,
+		link: 'devinetakeover',
+		content: {
+			title: 'Devine takeover',
+			description: 'Hoewel de huidige Devine-website zijn doel heeft gediend, is het tijd om vooruit te kijken. Devine is voortdurend in verandering. En dat zou ook voor onze website moeten gelden. Jij hebt volledige controle over de nieuwe homepage van de Devine-website.',
+			headerImage: devinetakeoverHeader,
+			textImageOne: {
+				title: 'Take it in',
+				copy: 'Met een aanpasbare header kan je de Devine website overnemen. Toekomstige studenten moeten ook hun takeover op de site plaatsen.',
+				image: devinetakeoverIntroHeader,
+				mirror: false,
+			},
+			// copyOne:'lorem ipsum dolor sit amt, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+			slideshow: {
+				copy:'Ontdek de visuals',
+				images: [devinetakeoverIntro, devinetakeoverDesign, devinetakeoverDevelopment, devinetakeoverResearch, devinetakeoverFuture],
 			},
 		},
 	},
