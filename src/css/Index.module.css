@@ -34,10 +34,13 @@
 	border-radius: 50px;
 }
 
+.introChild img {
+	border-radius: 50px;
+}
+
 .introChild {
 	display: flex;
 	align-items: center;
-	overflow: hidden;
 	width: 100%;
 	height: max-content;
 	transform: scale(.9);

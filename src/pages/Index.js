@@ -64,6 +64,13 @@ const Home = ({ onOpenCursor }) => {
 
 		},0);
 
+		tl.to('.gsap-intro img', {
+			borderRadius: '70px',
+			duration: .89,
+			ease: 'circ.inOut',
+
+		},0);
+
 		tl.to('.gsap-intro',
 		{
 			scale: 1,
@@ -83,11 +90,11 @@ const Home = ({ onOpenCursor }) => {
 		},0);
 
 
-		if(activeVideo === true) {
-			document.querySelector('.video').play();
-		} else {
-			document.querySelector('.video').pause();
-		}
+		// if(activeVideo === true) {
+		// 	document.querySelector('.video').play();
+		// } else {
+		// 	document.querySelector('.video').pause();
+		// }
 	}, [activeVideo])
 
 
@@ -110,14 +117,14 @@ const Home = ({ onOpenCursor }) => {
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
-					 {videoError ? (
         		<img src={introImage} alt="Fallback Image" />
+					 {/* {videoError ? (
 						) : (
 						<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} poster={`${introImage}`} preload="metadata" onError={handleVideoError} muted loop className={`video`} ref={videoRef}>
 						<source src={video} type="video/mp4"/>
 						Your browser does not support the video tag.
 						</video>
-						)}
+						)} */}
 						{/* <img className='' src={introImage} /> */}
 						{/* <iframe src="https://player.vimeo.com/video/1019122669?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="showcase"></iframe><script src="https://player.vimeo.com/api/player.js"></script> */}
 					</div>
