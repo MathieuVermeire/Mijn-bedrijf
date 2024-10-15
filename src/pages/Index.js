@@ -104,8 +104,9 @@ const Home = ({ onOpenCursor }) => {
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
-					<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} preload="metadata" muted loop className={`video`} ref={videoRef}>
+					<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} preload="metadata" poster={introImage} muted loop className={`video`} ref={videoRef}>
 					<source src={video} type="video/mp4"/>
+					Your browser does not support the video tag.
 					</video>
 						{/* <img className='' src={introImage} /> */}
 						{/* <iframe src="https://player.vimeo.com/video/1019122669?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="showcase"></iframe><script src="https://player.vimeo.com/api/player.js"></script> */}
