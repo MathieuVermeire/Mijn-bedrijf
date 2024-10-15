@@ -113,7 +113,7 @@ const Home = ({ onOpenCursor }) => {
 					 {videoError ? (
         		<img src={introImage} alt="Fallback Image" />
 						) : (
-						<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} preload="metadata" onError={handleVideoError} muted loop className={`video`} ref={videoRef}>
+						<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} poster={`${introImage}`} preload="metadata" onError={handleVideoError} muted loop className={`video`} ref={videoRef}>
 						<source src={video} type="video/mp4"/>
 						Your browser does not support the video tag.
 						</video>
