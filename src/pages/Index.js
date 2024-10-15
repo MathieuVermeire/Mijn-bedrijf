@@ -90,11 +90,11 @@ const Home = ({ onOpenCursor }) => {
 		},0);
 
 
-		// if(activeVideo === true) {
-		// 	document.querySelector('.video').play();
-		// } else {
-		// 	document.querySelector('.video').pause();
-		// }
+		if(activeVideo === true) {
+			document.querySelector('.video').play();
+		} else {
+			document.querySelector('.video').pause();
+		}
 	}, [activeVideo])
 
 
@@ -117,19 +117,19 @@ const Home = ({ onOpenCursor }) => {
 			<motion.article className={Style.article}>
 				<div className={Style.intro}>
 				 	<div id='card' className={`gsap-intro ${Style.introChild}`}>
+					 {videoError ? (
         		<img src={introImage} alt="Fallback Image" />
-					 {/* {videoError ? (
 						) : (
 						<video onMouseEnter={e => handleMouseInIntro(e)} onMouseLeave={e => handleMouseLeaveIntro(e)} poster={`${introImage}`} preload="metadata" onError={handleVideoError} muted loop className={`video`} ref={videoRef}>
 						<source src={video} type="video/mp4"/>
 						Your browser does not support the video tag.
 						</video>
-						)} */}
+						)}
 						{/* <img className='' src={introImage} /> */}
 						{/* <iframe src="https://player.vimeo.com/video/1019122669?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="showcase"></iframe><script src="https://player.vimeo.com/api/player.js"></script> */}
 					</div>
 				</div>
-				<button className={`button ${Style.button}`}>Meer projecten</button>
+				<button className={`textAnimation button ${Style.button}`}>Meer projecten</button>
 			</motion.article>
 			<article className={`${Style.services} ${Style.articleM}`}>
 				<div className={Style.servicesHeading}>
@@ -143,7 +143,7 @@ const Home = ({ onOpenCursor }) => {
 			<article className={`${Style.projectWrapper} ${Style.articleM}`}>
 				<div className={Style.projectHeading}>
 					<h2 className={`titleAnimation ${Style.projectTitle}`}> Mijn Projecten</h2>
-					<button className={`button ${Style.projectsMore}`}><Link to='projecten'>Meer Projecten</Link></button>
+					<button className={`textAnimation button ${Style.projectsMore}`}><Link to='projecten'>Meer Projecten</Link></button>
 				</div>
 				<Project />
 			</article>

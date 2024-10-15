@@ -341,14 +341,19 @@
 	}
 
 	.wrapper {
-		padding-top: 22rem;
+		padding-top: 16rem;
+	}
+
+	.down {
+		margin-top: 5rem;
 	}
 
 	.articleM {
-		margin-top: 10rem;
+		margin-top: 5rem;
 	}
 
 	.servicesWrapper {
+		margin-top: 10rem;
 		width: 100vw;
     left: 50%;
     position: relative;
